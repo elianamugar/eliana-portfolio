@@ -1,6 +1,20 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  FaInstagram,
+  FaGithub,
+  FaLinkedinIn,
+  FaYoutube,
+  FaImdb,
+  FaGoodreadsG,
+} from "react-icons/fa";
+
+import { MdEmail } from "react-icons/md";
+import { SiLetterboxd } from "react-icons/si";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import mediaFeed from "../data/mediaFeed.json";
 ---
 
 <BaseLayout title="Eliana Mugar">
@@ -136,39 +150,122 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="connect-label">Connect with me</p>
 
       <div class="social-links">
-        <a href="mailto:elianamugar7@gmail.com" aria-label="Email" data-tooltip="Email">
-          @
+        <a href="mailto:elianamugar7@gmail.com" aria-label="Email"
+        data-tooltip="Email">
+          <MdEmail />
         </a>
 
-        <a href="https://www.instagram.com/elianamugar" aria-label="Instagram" data-tooltip="Instagram">
-          IG
+        <a
+          href="https://instagram.com/elianamugar"
+          target="_blank"
+          aria-label="Instagram"
+          data-tooltip="Instagram"
+        >
+          <FaInstagram />
         </a>
 
-        <a href="https://letterboxd.com/elianamugar" aria-label="Letterboxd" data-tooltip="Letterboxd">
-          LB
+        <a
+          href="https://letterboxd.com/elianamugar"
+          target="_blank"
+          aria-label="Letterboxd"
+          data-tooltip="Letterboxd"
+        >
+          <SiLetterboxd />
         </a>
 
-        <a href="https://www.goodreads.com/user/show/66067615-emuggins" aria-label="Goodreads" data-tooltip="Goodreads">
-          GR
+        <a
+          href="https://goodreads.com/emuggins"
+          target="_blank"
+          aria-label="Goodreads"
+          data-tooltip="Goodreads"
+        >
+          <FaGoodreadsG />
         </a>
 
-        <a href="https://github.com/elianamugar" aria-label="GitHub" data-tooltip="GitHub">
-          GH
+        <a
+          href="https://github.com/elianamugar"
+          target="_blank"
+          aria-label="GitHub"
+          data-tooltip="GitHub"
+        >
+          <FaGithub />
         </a>
 
-        <a href="https://www.youtube.com/@elianamugar" aria-label="YouTube" data-tooltip="YouTube">
-          YT
+        <a
+          href="https://youtube.com/@elianamugar"
+          target="_blank"
+          aria-label="YouTube"
+          data-tooltip="YouTube"
+        >
+          <FaYoutube />
         </a>
 
-        <a href="https://www.imdb.com/name/nm14175264/" aria-label="IMDb" data-tooltip="IMDb">
-          IMDb
+        <a
+          href="https://imdb.com/name/nm14175264"
+          target="_blank"
+          aria-label="IMDb"
+          data-tooltip="IMDb"
+        >
+          <FaImdb />
         </a>
 
-        <a href="https://linkedin.com/in/elianamugar/" aria-label="LinkedIn" data-tooltip="LinkedIn">
-          in
+        <a
+          href="https://linkedin.com/in/elianamugar"
+          target="_blank"
+          aria-label="LinkedIn"
+          data-tooltip="LinkedIn"
+        >
+          <FaLinkedinIn />
         </a>
-
       </div>
+      </section>
+
+      <section class="media-section">
+        <div class="media-column">
+          <p class="media-label">What I'm Watching</p>
+
+          <ul class="media-list">
+            {mediaFeed.watching.map((item) => (
+              <li>
+                <a href={item.link} target="_blank">
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="media-column">
+          <p class="media-label">What I'm Reading</p>
+
+          <div class="media-subsection">
+            <span class="media-status">Currently reading</span>
+
+            <ul class="media-list">
+              {mediaFeed.currentlyReading.map((item) => (
+                <li>
+                  <a href={item.link} target="_blank">
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="media-subsection">
+            <span class="media-status">Recently read</span>
+
+            <ul class="media-list">
+              {mediaFeed.read.map((item) => (
+                <li class="media-read">
+                  <a href={item.link} target="_blank">
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
     </div>
