@@ -5,33 +5,130 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Eliana Mugar">
   <main class="home">
-    <div class="hero">
-      <h1>ELIANA MUGAR</h1>
+    <section class="home-hero">
+  <p class="intro-code">
+    <span id="intro-text"></span><span class="cursor">_</span>
+  </p>
 
-      <p class="subtitle">
-        Creative work, research, and digital archives.
-      </p>
+  <h1 class="hero-name">
+    Eliana Mugar
+  </h1>
+
+  <div class="hero-code-line">
+  <span class="prompt">&gt;</span>
+
+  <p class="hero-subtitle">
+    (&#123;philo&#125; ∪ &#123;poly&#125;) -math
+  </p>
+</div>
+
+  <p class="hero-quote">
+    <span id="quote-text"></span>
+    <span class="cursor">_</span>
+  </p>
+</section>
+
+<script>
+  const introElement =
+    document.getElementById("intro-text");
+
+  const introText =
+    "hello world, i'm:";
+
+  let introIndex = 0;
+
+  function typeIntro() {
+    if (!introElement) return;
+
+    if (introIndex < introText.length) {
+      introElement.textContent +=
+        introText.charAt(introIndex);
+
+      introIndex++;
+
+      setTimeout(typeIntro, 70);
+    }
+  }
+
+  typeIntro();
+
+  const quotes = [
+    "Omnia vincit amor et nos cedamus amori.",
+    "Semper disco.",
+    "Il faut cultiver notre jardin.",
+    "Lernen ist wie Rudern gegen den Strom.",
+    "Chi va piano va sano e va lontano.",
+    "Άνθρωπος αγράμματος, ξύλο απελέκητο.",
+    "Ученье — свет, а неученье — тьма.",
+    "Ang kapaitan ng pag-aaral ay mas kanais-nais kaysa kapaitan ng kamangmangan.",
+    "El saber no ocupa lugar.",
+    "学海无涯.",
+    "Al draagt een aap een gouden ring, het is en blijft een lelijk ding.",
+    "Education is not preparation for life. Education is life itself."
+  ];
+
+  const quoteElement =
+    document.getElementById("quote-text");
+
+  let quoteIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function typeQuotes() {
+    if (!quoteElement) return;
+
+    const currentQuote =
+      quotes[quoteIndex];
+
+    if (!deleting) {
+      quoteElement.textContent =
+        currentQuote.slice(0, charIndex);
+
+      charIndex++;
+
+      if (charIndex > currentQuote.length) {
+        deleting = true;
+
+        setTimeout(typeQuotes, 2200);
+
+        return;
+      }
+    } else {
+      quoteElement.textContent =
+        currentQuote.slice(0, charIndex);
+
+      charIndex--;
+
+      if (charIndex < 0) {
+        deleting = false;
+
+        quoteIndex =
+          (quoteIndex + 1) % quotes.length;
+
+        charIndex = 0;
+      }
+    }
+
+    setTimeout(
+      typeQuotes,
+      deleting ? 22 : 40
+    );
+  }
+
+  setTimeout(typeQuotes, 1800);
+</script>
 
       <div class="portal-grid">
         <a href="/creative" class="portal-card">
           <h2>Creative Portfolio</h2>
-          <p>
-            Photography, film, posters, and visual archives.
-          </p>
         </a>
 
         <a href="/projects" class="portal-card">
           <h2>Research & Projects</h2>
-          <p>
-            Code, experiments, research, and technical work.
-          </p>
         </a>
 
         <a href="/cv" class="portal-card">
           <h2>CV / About</h2>
-          <p>
-            Resume, background, contact, and experience.
-          </p>
         </a>
       </div>
 

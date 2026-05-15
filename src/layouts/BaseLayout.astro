@@ -9,8 +9,53 @@ const { title = "Eliana Mugar" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+/>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
   </head>
   <body>
-    <slot />
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+  <span id="theme-toggle-text">light</span>
+</button>
+
+<slot />
+
+<script>
+  const root = document.documentElement;
+  const buttonText = document.getElementById("theme-toggle-text");
+
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    root.dataset.theme = "light";
+    if (buttonText) buttonText.textContent = "dark";
+  }
+
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    const isLight = root.dataset.theme === "light";
+
+    if (isLight) {
+      root.removeAttribute("data-theme");
+      localStorage.setItem("theme", "dark");
+      if (buttonText) buttonText.textContent = "light";
+    } else {
+      root.dataset.theme = "light";
+      localStorage.setItem("theme", "light");
+      if (buttonText) buttonText.textContent = "dark";
+    }
+  });
+</script>
   </body>
 </html>
