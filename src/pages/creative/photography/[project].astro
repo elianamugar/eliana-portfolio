@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { photoProjects } from "../../../data/photoProjects";
+
+export async function getStaticPaths() {
+  return Object.keys(photoProjects).map((project) => ({
+    params: { project },
+  }));
+}
+
+const { project } = Astro.params;
+
+function formatTitle(project) {
+  return project
+    .split("_")
+    .map((word) =>
+      word === "ii" || word === "iii"
+        ? word.toUpperCase()
+        : word.charAt(0).toUpperCase() + word.slice(1)
+    )
+    .join(" ");
+}
+
+const title = formatTitle(project);
+
+const images = photoProjects[project] || [];
+
+/* REPLACE THIS WITH YOUR ACTUAL R2 URL */
+const R2_BASE_URL =
+  "https://pub-572ebe461d354c81b241244275f0b4f2.r2.dev";
+---
+
+<BaseLayout title={`${title} Photography | Eliana Mugar`}>
+  <main class="section-page">
+    <a href="/creative/photography" class="back-link">
+      ← Photography
+    </a>
+
+    <section class="section-hero">
+      <p class="eyebrow">Photography Project</p>
+      <h1>{title}</h1>
+      <p class="subtitle">
+        A curated photography collection.
+      </p>
+    </section>
+
+    <section class="photo-grid">
+      {images.map((image) => (
+        <button
+          class="photo-card lightbox-trigger"
+          data-full={`${R2_BASE_URL}/photos/${project}/${image}`}
+        >
+          <img
+            src={`${R2_BASE_URL}/photos/${project}/${image}`}
+            alt={`${title} photography`}
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">
+        ×
+      </button>
+
+      <img
+        id="lightbox-image"
+        src=""
+        alt="Expanded photography view"
+      />
+    </div>
+
+    <script>
+      const lightbox =
+        document.getElementById("lightbox");
+
+      const lightboxImage =
+        document.getElementById("lightbox-image");
+
+      const closeButton =
+        document.getElementById("lightbox-close");
+
+      const triggers = document.querySelectorAll(
+        ".lightbox-trigger"
+      );
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const fullImage =
+            trigger.getAttribute("data-full");
+
+          if (
+            fullImage &&
+            lightboxImage &&
+            lightbox
+          ) {
+            lightboxImage.setAttribute(
+              "src",
+              fullImage
+            );
+
+            lightbox.classList.add("active");
+          }
+        });
+      });
+
+      closeButton?.addEventListener(
+        "click",
+        () => {
+          lightbox?.classList.remove("active");
+
+          lightboxImage?.setAttribute(
+            "src",
+            ""
+          );
+        }
+      );
+
+      lightbox?.addEventListener(
+        "click",
+        (event) => {
+          if (event.target === lightbox) {
+            lightbox.classList.remove(
+              "active"
+            );
+
+            lightboxImage?.setAttribute(
+              "src",
+              ""
+            );
+          }
+        }
+      );
+
+      document.addEventListener(
+        "keydown",
+        (event) => {
+          if (event.key === "Escape") {
+            lightbox?.classList.remove(
+              "active"
+            );
+
+            lightboxImage?.setAttribute(
+              "src",
+              ""
+            );
+          }
+        }
+      );
+    </script>
+  </main>
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Eliana Mugar">
+  <main class="home">
+    <div class="hero">
+      <h1>ELIANA MUGAR</h1>
+
+      <p class="subtitle">
+        Creative work, research, and digital archives.
+      </p>
+
+      <div class="portal-grid">
+        <a href="/creative" class="portal-card">
+          <h2>Creative Portfolio</h2>
+          <p>
+            Photography, film, posters, and visual archives.
+          </p>
+        </a>
+
+        <a href="/projects" class="portal-card">
+          <h2>Research & Projects</h2>
+          <p>
+            Code, experiments, research, and technical work.
+          </p>
+        </a>
+
+        <a href="/cv" class="portal-card">
+          <h2>CV / About</h2>
+          <p>
+            Resume, background, contact, and experience.
+          </p>
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
