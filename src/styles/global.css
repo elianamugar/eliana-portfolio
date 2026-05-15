@@ -997,7 +997,11 @@ h1 {
 }
 
 .media-read {
-  opacity: 0.72;
+  opacity: 0.62;
+}
+
+.media-read:hover {
+  opacity: 1;
 }
 
 .media-subsection {
@@ -1041,4 +1045,46 @@ h1 {
 
 .media-list li a:hover {
   color: var(--accent);
+}
+
+.media-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.media-item img {
+  width: 52px;
+  height: 78px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #111;
+  display: block;
+  flex-shrink: 0;
+}
+
+.media-item a {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.media-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.media-date {
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size: 0.72rem;
+
+  color: var(--muted);
+
+  opacity: 0.75;
 }
