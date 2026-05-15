@@ -1,15 +1,270 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const films = [
+  {
+    title: "Pyarellal Universe",
+    year: "2025",
+    type: "Short Film",
+    role: "Editor",
+    description: "A socially inept man tries to leverage technology to find love.",
+    url: "https://youtu.be/43_brZDkySo?si=98CNRkv3QvEtftuP",
+  },
+  {
+    title: "Method Man",
+    year: "2024",
+    type: "Short Film",
+    role: "Editor, Sound Designer, Colorist",
+    description: "Fred commits to his method, while Lauren is left to deal with it.",
+    url: "https://youtu.be/q5yF0agc6OI",
+  },
+  {
+    title: "Written Off",
+    year: "2024",
+    type: "Short Film",
+    role: "Colorist",
+    description: "Nico, on the verge of losing his temporary housing, debates what it means to be a houseless college student.",
+    url: null,
+  },
+  {
+    title: "ABC",
+    year: "2024",
+    type: "Short Film",
+    role: "Director, Cinematographer, Editor, Colorist, Production Sound Mixer, Sound Designer, Writer",
+    description: "Brett and Ryan have a bro sesh, until Brianna comes along to ruin the vibe.",
+    url: "https://youtu.be/zSIcZ2CrjiQ?si=WkBKIa__fm62JWUC",
+  },
+  {
+    title: "Piece and Glory",
+    year: "2024",
+    type: "Short Film",
+    role: "Colorist, Sound Designer",
+    description: "A New Yorker navigates his way through local crimes, but he discovers darkness lurking within.",
+    url: null,
+  },
+  {
+    title: "Boxes",
+    year: "2024",
+    type: "Short Film",
+    role: "Editor",
+    description: "A lighthearted dramedy about Vaishali, a young South Asian immigrant, who struggles to find stability as her family prepares to move out of her childhood home in America.",
+    url: null,
+  },
+  {
+    title: "I NI",
+    year: "2023",
+    type: "Short Film",
+    role: "Editor",
+    description: "When a grandfather meets his grandson for the first time, he must find a way to connect with him despite their generational trauma.",
+    url: null,
+  },
+  {
+    title: "At What Cost",
+    year: "2023",
+    type: "Short Film",
+    role: "Editor",
+    description: "An Asian-American dancer is forced to confront her trauma in the wake of her immigrant mother's death.",
+    url: "https://youtu.be/z-gEkUiXnRw",
+  },
+  {
+    title: "Heartbeat by Heartbeat",
+    year: "2023",
+    type: "Short Film",
+    role: "Editor",
+    description: "When a single father loses his job, he must find a way to pay for his daughter's heart surgery while struggling through the challenges of parenthood.",
+    url: "https://youtu.be/ktAGSGvW71M",
+  },
+  {
+    title: "Miss Fortune",
+    year: "2022",
+    type: "Short Film",
+    role: "Editor, Sound Designer, Production Sound Mixer, Executive Producer",
+    description: "A young queer girl is entered into an eerie beauty pageant, of unknown stakes, that ultimately turns against her.",
+    url: "https://vimeo.com/803135866?fl=pl&fe=sh",
+  },
+  {
+    title: "Antidote",
+    year: "2022",
+    type: "Short Film",
+    role: "Producer, Editor, Sound Designer",
+    description: "A pregnant woman obsessed with eating salt has dinner with her brother.",
+    url: "https://vimeo.com/827436838?fl=pl&fe=sh",
+  },
+  {
+    title: "Teddy's Day Off",
+    year: "2022",
+    type: "Short Film",
+    role: "Writer",
+    description: "As mobster Teddy enjoys his average Wednesday evening off, two guests happen to stop by: one that was invited and one who definitely wasn't.",
+    url: "https://youtu.be/c4YHmkP7lcA",
+  },
+  {
+    title: "Premeditated",
+    year: "2022",
+    type: "Short Film",
+    role: "Editor, Sound Designer, Production Sound Mixer, Executive Producer",
+    description: "Two co-workers plot their boss' murder in the break room.",
+    url: "https://youtu.be/05JkXfp9OKc",
+  },
+  {
+    title: "Finding Farewell",
+    year: "2022",
+    type: "Short Film",
+    role: "Editor, Colorist, Production Sound Mixer",
+    description: "Sal confronts his past and his PTSD.",
+    url: "https://youtu.be/NKo4IDqRMs8",
+  },
+  {
+    title: "Day of Judgment",
+    year: "2023",
+    type: "Short Film",
+    role: "Director, Cinematographer, Editor, Sound Designer",
+    description: "Someone is up for the chopping block.",
+    url: "https://youtu.be/L3GZ7CP9T3c",
+  },
+  {
+    title: "Boxing Day",
+    year: "2023",
+    type: "Short Film",
+    role: "Editor, Sound Designer, Cam Op",
+    description: "A girl packs her boxes until a stranger comes along and becomes a distraction.",
+    url: "https://youtu.be/4VPlRGBLIKU",
+  },
+  {
+    title: "Birthday Bash",
+    year: "2021",
+    type: "Short Film",
+    role: "Director, Editor, Cinematographer, Writer",
+    description: "A person celebrates their birthday alone and receives a surprise.",
+    url: "https://youtu.be/JmRg2z5re1Q",
+  },
+  {
+    title: "Truth Serum",
+    year: "2023",
+    type: "Title Sequence",
+    role: "Editor",
+    description: "A new recreational drug has hit the market where people can only tell the truth when they take it.",
+    url: "https://youtu.be/N_sY4JsxR9U",
+  },
+  {
+    title: "2023 Recap",
+    year: "2023",
+    type: "Video",
+    role: "Editor",
+    description: null,
+    url: "https://youtu.be/pJcftisiMqQ",
+  },
+  {
+    title: "2022 Recap",
+    year: "2022",
+    type: "Video",
+    role: "Editor",
+    description: null,
+    url: "https://youtu.be/01hh5HQGP2Q",
+  },
+  {
+    title: "TRAVEL",
+    year: "2022",
+    type: "Video",
+    role: "Editor",
+    description: null,
+    url: "https://youtu.be/_KPMfFC3ris",
+  },
+  {
+    title: "Portland Documentary",
+    year: "2022",
+    type: "Short Doc",
+    role: "Editor, Sound Designer",
+    description: null,
+    url: "https://youtu.be/_UQk50d7lw4",
+  },
+  {
+    title: "Red Bull Parody",
+    year: "2023",
+    type: "Spec Ad",
+    role: "Editor, Gaffer, Cam Op",
+    description: "Used scrap test footage from a shoot to create a spec Red Bull ad.",
+    url: "https://youtu.be/TVV6kYGK2WY",
+  },
+  {
+    title: "London Summer 2022",
+    year: "2022",
+    type: "Video",
+    role: "Editor, Sound Designer, Writer",
+    description: null,
+    url: "https://youtu.be/WsTPrOfy1QA",
+  },
+  {
+    title: "Fun and Games",
+    year: "2023",
+    type: "Short Film",
+    role: "'Bear', Gaffer",
+    description: "A boy engages in an intense match of poker with an unlikely opponent.",
+    url: "https://youtu.be/feKDy7rkDAM",
+  },
+  {
+    title: "Art Lost and Found: The Nazis' Decimation of Culture",
+    year: "2019",
+    type: "Short Doc",
+    role: "Narrator, Associate Editor, Researcher, Cam Op",
+    description: null,
+    url: "https://youtu.be/zvgY3twlCoY",
+  },
+  {
+    title: "Third World Liberation Strikes",
+    year: "2018",
+    type: "Short Doc",
+    role: "Associate Editor, Researcher, Cam Op, Sound Recordist",
+    description: null,
+    url: "https://youtu.be/8eqGjdF69n4",
+  },
+];
+
+const sortedFilms = films.sort(
+  (a, b) => Number(b.year) - Number(a.year)
+);
 ---
 
-<BaseLayout title="Film | Eliana Mugar">
+<BaseLayout title="Film & Video | Eliana Mugar">
   <main class="section-page">
     <a href="/creative" class="back-link">← Creative Portfolio</a>
 
     <section class="section-hero">
-      <p class="eyebrow">Film</p>
-      <h1>Film</h1>
-      <p class="subtitle">Editing, cinematic storytelling, reels, and moving-image work.</p>
+      <p class="eyebrow">Film & Video</p>
+      <h1>Editing, cinematic storytelling, and moving-image work.</h1>
+      <p class="subtitle">
+        Selected film, video, editing, sound, color, and production work.
+      </p>
+    </section>
+
+    <section class="film-list">
+      {sortedFilms.map((film) => {
+        const CardTag = film.url ? "a" : "article";
+
+        return (
+          <CardTag
+            href={film.url || undefined}
+            class="film-card"
+            target={film.url ? "_blank" : undefined}
+            rel={film.url ? "noreferrer" : undefined}
+          >
+            <div class="film-meta">
+              <span>{film.year}</span>
+              <span>{film.type}</span>
+            </div>
+
+            <div>
+              <h2>{film.title}</h2>
+              <p class="film-role">{film.role}</p>
+              <p>{film.description}</p>
+
+              {film.url && (
+                <span class="film-link">View project →</span>
+              )}
+            </div>
+          </CardTag>
+        );
+      })}
     </section>
   </main>
 </BaseLayout>
