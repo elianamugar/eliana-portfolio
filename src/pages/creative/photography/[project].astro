@@ -45,7 +45,7 @@ const R2_BASE_URL =
     </section>
 
     <section class="photo-grid">
-      {images.map((image) => (
+      {images.map((image, index) => (
         <button
           class="photo-card lightbox-trigger"
           data-full={`${R2_BASE_URL}/photos/${project}/${image}`}
@@ -53,8 +53,10 @@ const R2_BASE_URL =
           <img
             src={`${R2_BASE_URL}/photos/${project}/${image}`}
             alt={`${title} photography`}
-            loading="lazy"
-          />
+            loading={index < 4 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={index === 0 ? "high" : "auto"}
+           />
         </button>
       ))}
     </section>

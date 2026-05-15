@@ -373,3 +373,23 @@ h1 {
     min-height: 320px;
   }
 }
+
+.photo-card img,
+.project-card img {
+  background: #111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-card img,
+  .project-card img,
+  .portal-card,
+  .creative-card {
+    transition: none;
+  }
+
+  .photo-card:hover img,
+  .project-card:hover img,
+  .creative-card:hover::before {
+    transform: none;
+  }
+}
