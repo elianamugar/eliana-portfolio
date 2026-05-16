@@ -8,6 +8,20 @@ const GOODREADS_CURRENTLY_READING_RSS = "https://www.goodreads.com/review/list_r
 const GOODREADS_READ_RSS =
   "https://www.goodreads.com/review/list_rss/66067615?key=YOUR_KEY&shelf=read&sort=date_read";
 
+function extractGoodreadsRating(item) {
+  const html =
+    item.content ||
+    item["content:encoded"] ||
+    item.description ||
+    "";
+
+  const match =
+    html.match(/user_rating:\s*(\d+)/i) ||
+    html.match(/rating:\s*(\d+)/i);
+
+  return match ? Number(match[1]) : null;
+}
+
 function extractGoodreadsReadDate(item) {
   const html =
     item.content ||
@@ -75,6 +89,7 @@ const mediaFeed = {
     link: item.link,
     date: item.isoDate || item.pubDate,
     image: extractImage(item),
+    rating: extractGoodreadsRating(item),
   })),
 
   read: readItems.slice(0, 6).map((item) => ({
@@ -82,7 +97,8 @@ const mediaFeed = {
     link: item.link,
     date: item.isoDate || item.pubDate,
     image: extractImage(item),
-   readDate: extractGoodreadsReadDate(item) || item.isoDate || item.pubDate
+   readDate: extractGoodreadsReadDate(item) || item.isoDate || item.pubDate,
+   rating: extractGoodreadsRating(item),
 })),
 };
 

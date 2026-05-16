@@ -42,13 +42,15 @@
       "title": "Perfection",
       "link": "https://www.goodreads.com/review/show/7544131305?utm_medium=api&utm_source=rss",
       "date": "2026-05-11T02:21:18.000Z",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765806938l/203200544._SX50_.jpg"
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765806938l/203200544._SX50_.jpg",
+      "rating": 3
     },
     {
       "title": "International Relations Theory",
       "link": "https://www.goodreads.com/review/show/8455066180?utm_medium=api&utm_source=rss",
       "date": "2026-03-21T08:49:35.000Z",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1681199741l/128166359._SX50_.jpg"
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1681199741l/128166359._SX50_.jpg",
+      "rating": 0
     }
   ],
   "read": [
@@ -57,42 +59,48 @@
       "link": "https://www.goodreads.com/review/show/7423800600?utm_medium=api&utm_source=rss",
       "date": "2026-05-11T02:17:41.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389227856l/20494944._SY75_.jpg",
-      "readDate": "2026-05-11T02:17:41.000Z"
+      "readDate": "2026-05-11T02:17:41.000Z",
+      "rating": 4
     },
     {
       "title": "When He Was Wicked (Bridgertons, #6)",
       "link": "https://www.goodreads.com/review/show/8408652273?utm_medium=api&utm_source=rss",
       "date": "2026-03-08T06:23:25.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1274212205l/110396._SY75_.jpg",
-      "readDate": "2026-03-08T06:23:25.000Z"
+      "readDate": "2026-03-08T06:23:25.000Z",
+      "rating": 3
     },
     {
       "title": "A Portrait of the Artist as a Young Man",
       "link": "https://www.goodreads.com/review/show/8349133296?utm_medium=api&utm_source=rss",
       "date": "2026-03-03T23:09:45.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356142126l/14576054._SY75_.jpg",
-      "readDate": "2026-03-03T23:09:45.000Z"
+      "readDate": "2026-03-03T23:09:45.000Z",
+      "rating": 3
     },
     {
       "title": "Recursion",
       "link": "https://www.goodreads.com/review/show/7622081082?utm_medium=api&utm_source=rss",
       "date": "2026-02-11T02:53:06.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583406116l/50612756._SY75_.jpg",
-      "readDate": "2026-02-11T02:53:06.000Z"
+      "readDate": "2026-02-11T02:53:06.000Z",
+      "rating": 4
     },
     {
       "title": "A Clash of Kings  (A Song of Ice and Fire, #2)",
       "link": "https://www.goodreads.com/review/show/7934120927?utm_medium=api&utm_source=rss",
       "date": "2026-02-02T20:58:05.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567840212l/10572._SY75_.jpg",
-      "readDate": "2026-02-02T20:58:05.000Z"
+      "readDate": "2026-02-02T20:58:05.000Z",
+      "rating": 4
     },
     {
       "title": "Augustus",
       "link": "https://www.goodreads.com/review/show/7568171841?utm_medium=api&utm_source=rss",
       "date": "2025-12-04T08:37:54.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760003461l/20697542._SY75_.jpg",
-      "readDate": "2025-12-04T08:37:54.000Z"
+      "readDate": "2025-12-04T08:37:54.000Z",
+      "rating": 4
     }
   ]
 }

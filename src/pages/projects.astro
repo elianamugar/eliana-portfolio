@@ -1,17 +1,157 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const featuredProjects = [
+  {
+    title: "Fishbowl",
+    status: "In progress",
+    description:
+      "A community-based web app for small groups to share monthly updates, manage membership, and maintain private social spaces.",
+    stack: ["Node", "Express", "EJS", "SQLite", "Render"],
+  },
+  {
+    title: "Quartz / Obsidian Knowledge Site",
+    status: "Active",
+    description:
+      "A public knowledge-vault experiment built from Obsidian notes, Quartz, graph navigation, and static publishing workflows.",
+    stack: ["Quartz", "Obsidian", "GitHub Pages", "Markdown"],
+  },
+  {
+    title: "Astro Portfolio Archive",
+    status: "Active",
+    description:
+      "This site: a custom portfolio and personal archive using Astro, GitHub Pages, Cloudflare R2, RSS feeds, and Gruvbox-inspired design.",
+    stack: ["Astro", "GitHub Pages", "Cloudflare R2", "RSS"],
+  },
+];
+
+const interests = [
+  "digital archives",
+  "knowledge graphs",
+  "computational humanities",
+  "media systems",
+  "information architecture",
+  "film/post-production workflows",
+  "political theory",
+  "international relations",
+  "philosophy",
+  "literature",
+  "language and computation",
+
+  "linguistics",
+  "historical linguistics",
+  "multilingual typography",
+  "language preservation",
+  "computational linguistics",
+  "phonology",
+  "syntax",
+  "language acquisition",
+];
+
+const experiments = [
+  "Obsidian-to-web publishing workflows",
+  "RSS-powered personal homepage sections",
+  "Cloud-backed photography archives",
+  "Static-site media infrastructure",
+  "Letterboxd data experiments",
+  "Quartz graph customization",
+  "Car Thing / alternative interface projects",
+];
+
+const currentExplorations = [
+  "building a personal digital archive",
+  "connecting creative work with research systems",
+  "designing cinematic interfaces for static sites",
+  "organizing film, books, notes, and projects as linked knowledge",
+];
 ---
 
 <BaseLayout title="Research & Projects | Eliana Mugar">
-  <main class="home">
-    <div class="hero">
-      <a href="/" class="back-link">← Home</a>
+  <main class="research-page">
+    <a href="/" class="back-link">← Home</a>
 
-      <h1>Research & Projects</h1>
-
-      <p class="subtitle">
-        Code, experiments, research, writing, and technical work.
+    <section class="research-hero compact-research-hero">
+      <p class="research-type-line">
+        <span class="prompt">&gt;</span>
+        <span id="research-type-text"></span><span class="cursor">_</span>
       </p>
-    </div>
+    </section>
+
+    <script>
+      const researchTypeElement = document.getElementById("research-type-text");
+      const researchText = "research_and_projects";
+
+      let researchIndex = 0;
+
+      function typeResearchLine() {
+        if (!researchTypeElement) return;
+
+        if (researchIndex < researchText.length) {
+          researchTypeElement.textContent += researchText.charAt(researchIndex);
+          researchIndex++;
+
+          setTimeout(typeResearchLine, 65);
+        }
+      }
+
+      typeResearchLine();
+    </script>
+
+    <section class="research-section">
+      <p class="section-label">Featured Systems</p>
+
+      <div class="research-grid">
+        {featuredProjects.map((project) => (
+          <article class="research-card">
+            <div class="research-card-header">
+              <h2>{project.title}</h2>
+              <span>{project.status}</span>
+            </div>
+
+            <p>{project.description}</p>
+
+            <div class="tag-row">
+              {project.stack.map((tag) => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="research-section">
+      <p class="section-label">Research Interests</p>
+      <p class="research-note">
+        Particularly interested in the intersection of language,
+        computation, media systems, and cultural archives.
+      </p>
+
+      <div class="interest-cloud">
+        {interests.map((interest) => (
+          <span>{interest}</span>
+        ))}
+      </div>
+    </section>
+
+    <section class="research-section">
+      <p class="section-label">Experimental Projects / Lab Notes</p>
+
+      <ul class="lab-list">
+        {experiments.map((experiment) => (
+          <li>{experiment}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="research-section">
+      <p class="section-label">Current Explorations</p>
+
+      <ul class="lab-list muted-list">
+        {currentExplorations.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
   </main>
 </BaseLayout>

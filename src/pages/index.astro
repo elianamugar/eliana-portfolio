@@ -304,6 +304,12 @@ import mediaFeed from "../data/mediaFeed.json";
                         year: "numeric",
                       })}
                     </span>
+
+                    {item.rating && (
+                      <span class="media-rating">
+                        {"★".repeat(item.rating)}{"☆".repeat(5 - item.rating)}
+                      </span>
+                    )}
                   </div>
                 </li>
               ))}
