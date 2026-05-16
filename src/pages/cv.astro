@@ -17,116 +17,6 @@ const highlights = [
   "Photographer"
 ];
 
-const research = [
-  {
-    title: "Adjectives and adverbs as stylometric analysis parameters",
-    authors: "Lukin, E., Roberts, J.C., Berdik, D., Mugar, E., & Juola, P.",
-    meta: "International Journal of Digital Humanities · 2023",
-    links: [
-      {
-        label: "[paper]",
-        href: "https://link.springer.com/article/10.1007/s42803-023-00065-y",
-      },
-    ],
-  },
-  {
-    title: "Misinformation: The Disease Borne out of the COVID-19 Pandemic",
-    authors: "Mugar, E., Rigor, S.",
-    meta: "CAS LX390: Metrics and Evaluation in NLP · 2023",
-    links: [
-      {
-        label: "[slides]",
-        href: "https://docs.google.com/presentation/d/1r5R8e0nyMPJzRFG1LkfUYLfcBAXeeFvxs7F7moEvFTI/edit?usp=sharing",
-      },
-      {
-        label: "[code]",
-        href: "https://colab.research.google.com/drive/1lY5SDpUJkrzm22LU__MSQyVJNr_do8Pp?usp=sharing",
-      },
-      {
-        label: "[paper]",
-        href: "https://www.linkedin.com/in/elianamugar/details/projects/1746993714/multiple-media-viewer/?profileId=ACoAACkt9OcB3-V9Z6JvCaLfcMsdi0QDZ0OzgcQ&treasuryMediaId=1635536885802",
-      },
-    ],
-  },
-  {
-    title: "Twitter Sentimental Analysis Model Comparison",
-    authors: "Mugar, E., Rigor, S.",
-    meta: "CAS LX390: Metrics and Evaluation in NLP · 2023",
-    links: [
-      {
-        label: "[code]",
-        href: "https://colab.research.google.com/drive/1M1a6aAdirTXq_DAoHUrFHL8i-zZbqx5F?usp=sharing",
-      },
-      {
-        label: "[paper]",
-        href: "https://www.linkedin.com/in/elianamugar/details/projects/1746347389/multiple-media-viewer/?profileId=ACoAACkt9OcB3-V9Z6JvCaLfcMsdi0QDZ0OzgcQ&treasuryMediaId=1635536891231",
-      },
-    ],
-  },
-  {
-    title: "Cleaning Roget’s Thesaurus: Adjective Categorizing",
-    authors: "Mugar, E.",
-    meta: "CAS LX496: Computational Linguistics · 2023",
-    links: [
-      {
-        label: "[code]",
-        href: "https://colab.research.google.com/drive/1ClGMH8Ej1k0bVmKxUdAwliYz7YA2CHYQ?usp=sharing",
-      }
-    ],
-  },
-  {
-    title:
-      "Construction and Analysis of a Map-Based Data Corpus for Tracking Linguistic Variation and Demographic Characteristic Identification",
-    authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Niyu, H., Napolitano-Jawerbaum, A., Juola, P.",
-    meta: "Text as Data Conference (TADA) · Poster Presentation · 2022",
-    links: [
-      {
-        label: "[poster]",
-        href: null,
-      }
-    ],
-  },
-  {
-    title:
-      "Construction and Analysis of a Map-Based Data Corpus for Tracking Individual Token Use and Demographic Characteristic Identification",
-    authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Juola, P.",
-    meta: "Digital Humanities Unbound · Poster Presentation · 2022",
-    links: [
-      {
-        label: "[poster]",
-        href: null,
-      }
-    ],
-  },
-  {
-    title: "Modality in Mandarin Chinese and Tagalog",
-    authors: "Mugar, E., Rigor, S.",
-    meta: "CAS LX331: Semantics and Pragmatics · 2022",
-    links: [
-      {
-        label: "[slides]",
-        href: "https://docs.google.com/presentation/d/1fT0UJaHefAtPTwtDgdd2KR1NOqK9Tcn7O-fkXaVIGfE/edit?usp=sharing",
-      },
-      {
-        label: "[paper]",
-        href: "https://docs.google.com/document/d/16mD7Izkudf0JKyfXbAxBrkbtOuqRrplDZZrwAtISVA8/edit?usp=sharing",
-      },
-    ],
-  },
-  {
-    title:
-      "Creakin’ Up with the Kardashians: A study of creaky voice in gendered interactions",
-    authors: "Tighe, A., Small, A., Rice, J., Mugar, E., Charley, C., Stemerman, C., Johnson, J.",
-    meta: "CAS LX342: Language, Race, and Gender · 2021",
-    links: [
-      {
-        label: "[slides]",
-        href: "https://docs.google.com/presentation/d/1CaPNUZexjw8NBW3kEsbiWlno3S9k_PJhibhvbuhvbbI/edit?usp=sharing",
-      }
-    ],
-  },
-];
-
 const tools = [
   "Adobe Premiere Pro",
   "After Effects",
@@ -170,8 +60,10 @@ const roles = [
       </p>
     </section>
 
+    <div class="cv-top-grid">
+
     <section class="research-section">
-      <p class="section-label">
+      <p class="section-label left-section-label">
         <span class="section-prompt">&gt;</span>
         About
       </p>
@@ -189,7 +81,7 @@ const roles = [
     </section>
 
     <section class="research-section">
-      <p class="section-label">
+      <p class="section-label left-section-label">
         <span class="section-prompt">&gt;</span>
         Education
       </p>
@@ -207,7 +99,29 @@ const roles = [
           Minor in Film & Television
         </p>
       </div>
+      <section class="research-section fun-facts-section">
+      <p class="section-label left-section-label">
+        <span class="section-prompt">&gt;</span>
+        Interests & Hobbies
+      </p>
+
+      <ul class="fun-facts-list">
+        <li>Traveling</li>
+        <li>Soccer</li>
+        <li>Trivia</li>
+        <li>History</li>
+        <li>Learning languages</li>
+        <li>Avid Letterboxd user, trying to watch a movie per day</li>
+        <li>Photography</li>
+        <li>Music</li>
+        <li>Pinoy Pride! 🇵🇭</li>
+      </ul>
     </section>
+    </section>
+
+    
+
+    </div>
 
     <section class="research-section">
       <p class="section-label">
@@ -366,46 +280,6 @@ const roles = [
                     <li>{detail}</li>
                   ))}
                 </ul>
-              )}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Research
-      </p>
-
-      <div class="publication-list">
-        {research.map((item) => (
-          <article class="publication-item">
-            <div>
-              <h2>{item.title}</h2>
-
-              <p class="publication-authors"
-                set:html={item.authors.replace(
-                  "Mugar, E.",
-                  "<strong>Mugar, E.</strong>"
-                )}
-              />
-
-              <p>{item.meta}</p>
-
-              {item.links?.length > 0 && (
-                <div class="publication-links">
-                  {item.links.map((link) => (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
               )}
             </div>
           </article>

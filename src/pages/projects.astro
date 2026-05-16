@@ -1,27 +1,224 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const research = [
+  {
+    title: "Adjectives and adverbs as stylometric analysis parameters",
+    authors: "Lukin, E., Roberts, J.C., Berdik, D., Mugar, E., & Juola, P.",
+    meta: "International Journal of Digital Humanities · 2023",
+    links: [
+      {
+        label: "[paper]",
+        href: "https://link.springer.com/article/10.1007/s42803-023-00065-y",
+      },
+    ],
+  },
+  {
+    title: "Misinformation: The Disease Borne out of the COVID-19 Pandemic",
+    authors: "Mugar, E., Rigor, S.",
+    meta: "CAS LX390: Metrics and Evaluation in NLP · 2023",
+    links: [
+      {
+        label: "[slides]",
+        href: "https://docs.google.com/presentation/d/1r5R8e0nyMPJzRFG1LkfUYLfcBAXeeFvxs7F7moEvFTI/edit?usp=sharing",
+      },
+      {
+        label: "[code]",
+        href: "https://colab.research.google.com/drive/1lY5SDpUJkrzm22LU__MSQyVJNr_do8Pp?usp=sharing",
+      },
+      {
+        label: "[paper]",
+        href: "https://www.linkedin.com/in/elianamugar/details/projects/1746993714/multiple-media-viewer/?profileId=ACoAACkt9OcB3-V9Z6JvCaLfcMsdi0QDZ0OzgcQ&treasuryMediaId=1635536885802",
+      },
+    ],
+  },
+  {
+    title: "Twitter Sentimental Analysis Model Comparison",
+    authors: "Mugar, E., Rigor, S.",
+    meta: "CAS LX390: Metrics and Evaluation in NLP · 2023",
+    links: [
+      {
+        label: "[code]",
+        href: "https://colab.research.google.com/drive/1M1a6aAdirTXq_DAoHUrFHL8i-zZbqx5F?usp=sharing",
+      },
+      {
+        label: "[paper]",
+        href: "https://www.linkedin.com/in/elianamugar/details/projects/1746347389/multiple-media-viewer/?profileId=ACoAACkt9OcB3-V9Z6JvCaLfcMsdi0QDZ0OzgcQ&treasuryMediaId=1635536891231",
+      },
+    ],
+  },
+  {
+    title: "Cleaning Roget’s Thesaurus: Adjective Categorizing",
+    authors: "Mugar, E.",
+    meta: "CAS LX496: Computational Linguistics · 2023",
+    links: [
+      {
+        label: "[code]",
+        href: "https://colab.research.google.com/drive/1ClGMH8Ej1k0bVmKxUdAwliYz7YA2CHYQ?usp=sharing",
+      }
+    ],
+  },
+  {
+    title:
+      "Construction and Analysis of a Map-Based Data Corpus for Tracking Linguistic Variation and Demographic Characteristic Identification",
+    authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Niyu, H., Napolitano-Jawerbaum, A., Juola, P.",
+    meta: "Text as Data Conference (TADA) · Poster Presentation · 2022",
+    links: [
+      {
+        label: "[poster]",
+        href: null,
+      }
+    ],
+  },
+  {
+    title:
+      "Construction and Analysis of a Map-Based Data Corpus for Tracking Individual Token Use and Demographic Characteristic Identification",
+    authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Juola, P.",
+    meta: "Digital Humanities Unbound · Poster Presentation · 2022",
+    links: [
+      {
+        label: "[poster]",
+        href: null,
+      }
+    ],
+  },
+  {
+    title: "Modality in Mandarin Chinese and Tagalog",
+    authors: "Mugar, E., Rigor, S.",
+    meta: "CAS LX331: Semantics and Pragmatics · 2022",
+    links: [
+      {
+        label: "[slides]",
+        href: "https://docs.google.com/presentation/d/1fT0UJaHefAtPTwtDgdd2KR1NOqK9Tcn7O-fkXaVIGfE/edit?usp=sharing",
+      },
+      {
+        label: "[paper]",
+        href: "https://docs.google.com/document/d/16mD7Izkudf0JKyfXbAxBrkbtOuqRrplDZZrwAtISVA8/edit?usp=sharing",
+      },
+    ],
+  },
+  {
+    title:
+      "Creakin’ Up with the Kardashians: A study of creaky voice in gendered interactions",
+    authors: "Tighe, A., Small, A., Rice, J., Mugar, E., Charley, C., Stemerman, C., Johnson, J.",
+    meta: "CAS LX342: Language, Race, and Gender · 2021",
+    links: [
+      {
+        label: "[slides]",
+        href: "https://docs.google.com/presentation/d/1CaPNUZexjw8NBW3kEsbiWlno3S9k_PJhibhvbuhvbbI/edit?usp=sharing",
+      }
+    ],
+  },
+];
+
 const featuredProjects = [
   {
     title: "Fishbowl",
-    status: "In progress",
-    description:
-      "A community-based web app for small groups to share monthly updates, manage membership, and maintain private social spaces.",
-    stack: ["Node", "Express", "EJS", "SQLite", "Render"],
-  },
-  {
-    title: "Quartz / Obsidian Knowledge Site",
+
+    primaryLink: "https://fishbowl-65ib.onrender.com/",
+
     status: "Active",
+
     description:
-      "A public knowledge-vault experiment built from Obsidian notes, Quartz, graph navigation, and static publishing workflows.",
-    stack: ["Quartz", "Obsidian", "GitHub Pages", "Markdown"],
+      "A community-based social platform for small groups to share monthly updates, manage membership roles, and maintain semi-private digital spaces.",
+
+    stack: [
+      "Node",
+      "Express",
+      "SQLite",
+      "EJS",
+      "Render",
+    ],
+
+    links: [
+      {
+        label: "[github]",
+        href: "https://github.com/elianamugar/Fishbowl",
+      },
+      {
+        label: "[live]",
+        href: "https://fishbowl-65ib.onrender.com/",
+      }
+    ],
   },
+
+  {
+    title: "Quartz / Obsidian Knowledge System",
+
+    primaryLink: "https://elianamugar.github.io/Everything-Obsidian-Site/",
+
+    status: "Active",
+
+    description:
+      "A public knowledge-vault experiment built using Quartz, Obsidian, graph navigation, static publishing workflows, and interconnected research notes.",
+
+    stack: [
+      "Quartz",
+      "Obsidian",
+      "Markdown",
+      "GitHub Pages",
+    ],
+
+    links: [
+      {
+        label: "[github]",
+        href: "https://github.com/elianamugar/Everything-Obsidian-Site",
+      },
+
+      {
+        label: "[live]",
+        href: "https://elianamugar.github.io/Everything-Obsidian-Site/",
+      },
+    ],
+  },
+
   {
     title: "Astro Portfolio Archive",
+
+    primaryLink: "https://elianamugar.com",
+
     status: "Active",
+
     description:
-      "This site: a custom portfolio and personal archive using Astro, GitHub Pages, Cloudflare R2, RSS feeds, and Gruvbox-inspired design.",
-    stack: ["Astro", "GitHub Pages", "Cloudflare R2", "RSS"],
+      "A custom Astro portfolio integrating RSS feeds, Cloudflare R2 media infrastructure, GitHub Actions automation, and Gruvbox-inspired terminal aesthetics.",
+
+    stack: [
+      "Astro",
+      "Cloudflare R2",
+      "GitHub Actions",
+      "RSS",
+    ],
+
+    links: [
+      {
+        label: "[live]",
+        href: "https://elianamugar.com",
+      },
+    ],
+  },
+
+  {
+    title: "Apple Music Car Thing Interface",
+
+    primaryLink: "https://github.com/elianamugar/apple-music-thing",
+
+    status: "Experimental",
+
+    description:
+      "Experimental interface and media-control work for Spotify Car Thing hardware using DeskThing and Apple Music integrations.",
+
+    stack: [
+      "TypeScript",
+      "DeskThing",
+      "Apple Music",
+    ],
+
+    links: [
+      {
+        label: "[github]",
+        href: "https://github.com/elianamugar/apple-music-thing",
+      },
+    ],
   },
 ];
 
@@ -98,11 +295,17 @@ const currentExplorations = [
     </script>
 
     <section class="research-section">
-      <p class="section-label">Featured Systems</p>
+      <p class="section-label">
+        <span class="section-prompt">&gt;</span>
+        Featured Systems
+      </p>
 
       <div class="research-grid">
         {featuredProjects.map((project) => (
-          <article class="research-card">
+          <div
+            class="research-card clickable-card"
+            onclick={`window.open('${project.primaryLink}', '_blank')`}
+          >
             <div class="research-card-header">
               <h2>{project.title}</h2>
               <span>{project.status}</span>
@@ -111,9 +314,59 @@ const currentExplorations = [
             <p>{project.description}</p>
 
             <div class="tag-row">
-              {project.stack.map((tag) => (
-                <span>{tag}</span>
-              ))}
+              {project.links?.length > 0 && (
+                <div class="project-links">
+                  {project.links.map((link) => (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="research-section">
+      <p class="section-label">
+        <span class="section-prompt">&gt;</span>
+        Research & Publications
+      </p>
+
+      <div class="publication-list">
+        {research.map((item) => (
+          <article class="publication-item">
+            <div>
+              <h2>{item.title}</h2>
+
+              <p class="publication-authors"
+                set:html={item.authors.replace(
+                  "Mugar, E.",
+                  "<strong>Mugar, E.</strong>"
+                )}
+              />
+
+              <p>{item.meta}</p>
+
+              {item.links?.length > 0 && (
+                <div class="publication-links">
+                  {item.links.map((link) => (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           </article>
         ))}
@@ -121,10 +374,9 @@ const currentExplorations = [
     </section>
 
     <section class="research-section">
-      <p class="section-label">Research Interests</p>
-      <p class="research-note">
-        Particularly interested in the intersection of language,
-        computation, media systems, and cultural archives.
+      <p class="section-label">
+        <span class="section-prompt">&gt;</span>
+        Research Interests
       </p>
 
       <div class="interest-cloud">
@@ -135,7 +387,10 @@ const currentExplorations = [
     </section>
 
     <section class="research-section">
-      <p class="section-label">Experimental Projects / Lab Notes</p>
+      <p class="section-label">
+        <span class="section-prompt">&gt;</span>
+        Experimental Projects / Lab Notes
+      </p>
 
       <ul class="lab-list">
         {experiments.map((experiment) => (
@@ -145,7 +400,10 @@ const currentExplorations = [
     </section>
 
     <section class="research-section">
-      <p class="section-label">Current Explorations</p>
+      <p class="section-label">
+        <span class="section-prompt">&gt;</span>
+        Current Explorations
+      </p>
 
       <ul class="lab-list muted-list">
         {currentExplorations.map((item) => (
