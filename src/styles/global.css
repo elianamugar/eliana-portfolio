@@ -1257,7 +1257,7 @@ h1 {
     "IBM Plex Mono",
     monospace;
 
-  color: #a9b665;
+  color: var(--aqua);
 
   font-size: 1rem;
 
@@ -1619,14 +1619,13 @@ h1 {
 
 .cv-top-grid {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 2fr)
-    minmax(260px, 1fr);
-
-  gap: 3rem;
-
+  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.9fr);
+  gap: 4rem;
   align-items: start;
+}
+
+.cv-top-grid .research-section {
+  margin-top: 0;
 }
 
 @media (max-width: 900px) {
@@ -1673,6 +1672,73 @@ h1 {
 .right-column-stack {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+}
 
-  gap: 2rem;
+.right-column-stack .section-label {
+  margin-bottom: 0.75rem;
+}
+
+.right-column-stack .research-section {
+  margin-top: 0;
+}
+
+.interests-inline {
+  margin: 0 0 0 0.1rem;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  color: var(--muted);
+
+  font-size: 0.74rem;
+
+  line-height: 1.8;
+}
+
+.page-hero {
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin: 0;
+
+  font-family:
+    "IBM Plex Mono",
+    monospace;
+
+  font-size: clamp(3rem, 7vw, 5.5rem);
+
+  font-weight: 500;
+
+  letter-spacing: -0.05em;
+
+  color: var(--text);
+}
+
+.page-title span {
+  color: var(--accent);
+
+  font-size: 0.5em;
+}
+
+.cv-hero {
+  margin: 5rem 0 4rem;
+}
+
+.education-meta {
+  padding-left: 0.15rem;
+}
+
+.projects-page .section-label {
+  color: var(--aqua);
+}
+
+.projects-page .section-prompt {
+  color: var(--accent);
 }
