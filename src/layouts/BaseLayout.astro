@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 const { title = "Eliana Mugar" } = Astro.props;
+const isHomePage = Astro.url.pathname === "/";
 ---
 
 <html lang="en">
@@ -26,6 +27,14 @@ const { title = "Eliana Mugar" } = Astro.props;
 />
   </head>
   <body>
+    {!isHomePage && (
+      <a href="/" class="global-site-title">
+        <span class="global-site-prompt">&gt;</span>
+        ELIANA MUGAR
+      </a>
+    )}
+
+    <slot />
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
   <span id="theme-toggle-text">light</span>
 </button>

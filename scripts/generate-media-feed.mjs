@@ -77,7 +77,7 @@ const sortedReadItems = readItems
   });
 
 const mediaFeed = {
-  watching: letterboxdItems.slice(0, 4).map((item) => ({
+  watching: letterboxdItems.slice(0, 6).map((item) => ({
     title: item.title,
     link: item.link,
     date: item.isoDate || item.pubDate,

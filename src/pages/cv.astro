@@ -126,182 +126,183 @@ const roles = [
 
     </div>
 
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Experience
-      </p>
+    <section class="cv-dropdown-section" id="cv-dropdown-section">
+      <div class="cv-dropdown-row">
+        <button class="dropdown-trigger" id="experience-trigger" type="button">
+          <span class="dropdown-arrow">&gt;</span>
+          Experience
+        </button>
 
-      <div class="timeline">
-        {[
-          {
-            date: "Jan 2020 – Present",
-            title: "Film Editor",
-            org: "Freelance",
-            details: [
-              "Edited short films and video projects using Adobe Premiere Pro, After Effects, and DaVinci Resolve.",
-              "Worked on multiple award-winning short films.",
-            ],
-          },
-          {
-            date: "Nov 2023 – Present",
-            title: "Investigator Analyst",
-            org: "Quilligence, Inc. | Remote",
-            details: [
-              "Monitor online accounts and investigate social media platforms to prevent threats and doxxing for high-profile clients.",
-              "Completed data entry tasks to update database information.",
-            ],
-          },
-          /*
-          {
-            date: "Sept 2023 – Present",
-            title: "Emerging Leaders Board Member",
-            org: "Entertainment 2 Affect Change | Los Angeles, CA",
-            details: [],
-          },
-          */
-          /*
-          {
-            date: "Sept 2022 – Feb 2024",
-            title: "Film Festival Judge",
-            org: "Social Impact Film Festival | Boston, MA",
-            details: [],
-          },
-          */
-          {
-            date: "Aug 2020 – Aug 2023",
-            title: "Social Media Manager",
-            org: "Women in Technology Non-Profit | Manila, Philippines",
-            details: [
-              "Partnered with Google Philippines for Digiskarteng Pinay to create tutorial videos on online business creation.",
-              "Wrote scripts and assisted with uploads/edits for WiTech YouTube and TikTok.",
-            ],
-          },
-          {
-            date: "Aug 2020 – May 2023",
-            title: "Information Technology Service Desk",
-            org: "IT Help Center | Boston University, MA",
-            details: [
-              "Supported the university network by troubleshooting technical issues.",
-              "Triaged problems by phone and in-person visits.",
-              "Facilitated communication between online and in-person students.",
-            ],
-          },
-          {
-            date: "Jan 2021 – Aug 2023",
-            title: "Student Researcher",
-            org: "Evaluating Variations in Language Lab | Duquesne University, PA",
-            details: [
-              "Supervised by Dr. Patrick Juola.",
-              "Researched text-based authorship attribution using Python, Excel, and corpus analysis.",
-              "Co-authored research on adjective/adverb analysis for stylometry.",
-              "Conducted experimental research with self-made NLTK Python scripts.",
-            ],
-          },
-          /*
-          {
-            date: "May 2021 – May 2023",
-            title: "President",
-            org: "Delta Kappa Alpha Professional Cinema Fraternity | Boston University, MA",
-            details: [
-              "Produced semesterly productions.",
-              "Coordinated communication between National Council, local executive boards, and chapter members.",
-              "Managed organizational development and projects from start to finish.",
-            ],
-          },
-          */
-          /*
-          {
-            date: "Jan 2021 – May 2023",
-            title: "President",
-            org: "Boston University Linguistics Association | Boston University, MA",
-            details: [
-              "Managed administrative communication for 60+ members.",
-              "Established rapport with professors and researchers in the linguistics department.",
-            ],
-          },
-          */
-          /*
-          {
-            date: "Apr 2023",
-            title: "Event Photographer",
-            org: "Social Impact Film Festival | Boston, MA",
-            details: [
-              "Photographed and edited event coverage for use in social media, web, and promotional materials.",
-            ],
-          },
-          */
-          /*
-          {
-            date: "Sept 2022 – Oct 2022",
-            title: "Film Festival Judge",
-            org: "Grizzly Film & Arts Festival | Berkeley, CA",
-            details: [],
-          },
-          */
-          {
-            date: "Jun 2022 – Oct 2022",
-            title: "Research Assistant",
-            org: "Phonetics, Acquisition, and Multilingualism Lab | Boston University, MA",
-            details: [
-              "Supervised by Dr. Charles B. Chang.",
-              "Used Excel and Praat to transcribe and annotate phonetic data from recorded audio.",
-            ],
-          },
-          /*
-          {
-            date: "Jul 2020 – Jan 2022",
-            title: "Graphic Designer and Video Editor",
-            org: "Queen Bee Project Non-Profit | Sacramento, CA",
-            details: [
-              "Created Instagram graphics and visual content.",
-              "Established a brand template using Photoshop and Lightroom.",
-            ],
-          },
-          */
-          {
-            date: "Jun 2018 – Jul 2018",
-            title: "Public Information and Communications Department Intern",
-            org: "City of Folsom | Folsom, CA",
-            details: [
-              "Wrote budget reports and informal articles.",
-              "Created graphics/logos for city social media and assisted with website revamp.",
-              "Delivered a TED Talk based on the internship experience.",
-            ],
-          },
-        ].map((job) => (
-          <article class="timeline-item">
-            <span class="timeline-date">{job.date}</span>
+        <button class="dropdown-trigger" id="tools-trigger" type="button">
+          <span class="dropdown-arrow">&gt;</span>
+          Tools
+        </button>
+      </div>
 
-            <div>
-              <h2>{job.title}</h2>
-              <p class="timeline-org">{job.org}</p>
+      <div class="cv-dropdown-content" id="experience-content">
+        <div class="timeline">
+          {[
+            {
+              date: "Jan 2020 – Present",
+              title: "Film Editor",
+              org: "Freelance",
+              details: [
+                "Edited short films and video projects using Adobe Premiere Pro, After Effects, and DaVinci Resolve.",
+                "Worked on multiple award-winning short films.",
+              ],
+            },
+            {
+              date: "Nov 2023 – Present",
+              title: "Investigator Analyst",
+              org: "Quilligence, Inc. | Remote",
+              details: [
+                "Monitor online accounts and investigate social media platforms to prevent threats and doxxing for high-profile clients.",
+                "Completed data entry tasks to update database information.",
+              ],
+            },
+            {
+              date: "Aug 2020 – Aug 2023",
+              title: "Social Media Manager",
+              org: "Women in Technology Non-Profit | Manila, Philippines",
+              details: [
+                "Partnered with Google Philippines for Digiskarteng Pinay to create tutorial videos on online business creation.",
+                "Wrote scripts and assisted with uploads/edits for WiTech YouTube and TikTok.",
+              ],
+            },
+            {
+              date: "Aug 2020 – May 2023",
+              title: "Information Technology Service Desk",
+              org: "IT Help Center | Boston University, MA",
+              details: [
+                "Supported the university network by troubleshooting technical issues.",
+                "Triaged problems by phone and in-person visits.",
+                "Facilitated communication between online and in-person students.",
+              ],
+            },
+            {
+              date: "Jan 2021 – Aug 2023",
+              title: "Student Researcher",
+              org: "Evaluating Variations in Language Lab | Duquesne University, PA",
+              details: [
+                "Supervised by Dr. Patrick Juola.",
+                "Researched text-based authorship attribution using Python, Excel, and corpus analysis.",
+                "Co-authored research on adjective/adverb analysis for stylometry.",
+                "Conducted experimental research with self-made NLTK Python scripts.",
+              ],
+            },
+            {
+              date: "Jun 2022 – Oct 2022",
+              title: "Research Assistant",
+              org: "Phonetics, Acquisition, and Multilingualism Lab | Boston University, MA",
+              details: [
+                "Supervised by Dr. Charles B. Chang.",
+                "Used Excel and Praat to transcribe and annotate phonetic data from recorded audio.",
+              ],
+            },
+            {
+              date: "Jun 2018 – Jul 2018",
+              title: "Public Information and Communications Department Intern",
+              org: "City of Folsom | Folsom, CA",
+              details: [
+                "Wrote budget reports and informal articles.",
+                "Created graphics/logos for city social media and assisted with website revamp.",
+                "Delivered a TED Talk based on the internship experience.",
+              ],
+            },
+          ].map((job) => (
+            <article class="timeline-item">
+              <div>
+                <h2>{job.title}</h2>
 
-              {job.details.length > 0 && (
-                <ul class="timeline-details">
-                  {job.details.map((detail) => (
-                    <li>{detail}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </article>
-        ))}
+                <span class="timeline-date">
+                  {job.date}
+                </span>
+
+                <p class="timeline-org">{job.org}</p>
+
+                {job.details.length > 0 && (
+                  <ul class="timeline-details">
+                    {job.details.map((detail) => (
+                      <li>{detail}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="cv-dropdown-content" id="tools-content">
+        <div class="tools-layout">
+
+          <div>
+            <p class="tools-subheader">Cameras</p>
+            <p class="tools-inline">
+              Sony FX3, A7III, A7II, A6500 · Canon C100, C200, R6 MkII · RED Komodo · BMPCC 4K · ARRIFLEX 16SR 3
+            </p>
+          </div>
+
+          <div>
+            <p class="tools-subheader">Software</p>
+            <p class="tools-inline">
+              Premiere Pro · After Effects · Photoshop · Lightroom Classic · Illustrator · Audition · DaVinci Resolve · Final Cut Pro · Logic Pro X · Excel
+            </p>
+          </div>
+
+          <div>
+            <p class="tools-subheader">Research / Code / Web</p>
+            <p class="tools-inline">
+              Python · Java · JavaScript · HTML/CSS · GitHub · Praat · NLTK · Astro · Quartz
+            </p>
+          </div>
+          
+        </div>
       </div>
     </section>
 
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Tools
-      </p>
+    <script>
+      const cvSection = document.getElementById("cv-dropdown-section");
 
-      <div class="interest-cloud">
-        {tools.map((tool) => (
-          <span>{tool}</span>
-        ))}
-      </div>
-    </section>
+      const experienceTrigger = document.getElementById("experience-trigger");
+      const toolsTrigger = document.getElementById("tools-trigger");
+
+      const experienceContent = document.getElementById("experience-content");
+      const toolsContent = document.getElementById("tools-content");
+
+      function showCvPanel(panel: "experience" | "tools") {
+        const experienceIsOpen = experienceContent?.classList.contains("is-open");
+        const toolsIsOpen = toolsContent?.classList.contains("is-open");
+
+        const shouldClose =
+          (panel === "experience" && experienceIsOpen) ||
+          (panel === "tools" && toolsIsOpen);
+
+        experienceTrigger?.classList.remove("is-active");
+        toolsTrigger?.classList.remove("is-active");
+        experienceContent?.classList.remove("is-open");
+        toolsContent?.classList.remove("is-open");
+
+        if (shouldClose) return;
+
+        const showExperience = panel === "experience";
+
+        experienceTrigger?.classList.toggle("is-active", showExperience);
+        toolsTrigger?.classList.toggle("is-active", !showExperience);
+        experienceContent?.classList.toggle("is-open", showExperience);
+        toolsContent?.classList.toggle("is-open", !showExperience);
+
+        setTimeout(() => {
+          cvSection?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 50);
+      }
+
+      experienceTrigger?.addEventListener("click", () => showCvPanel("experience"));
+      toolsTrigger?.addEventListener("click", () => showCvPanel("tools"));
+    </script>
 
     <script>
       const cvTypeElement = document.getElementById("cv-type-text");
