@@ -1,37 +1,523 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const credits = [
+  {
+    title: "Pyarellal",
+    year: 2025,
+    roles: "Editor · Sound Designer · Colorist",
+    meta: "Pilot Episode · dir. Rik Roy",
+  },
+
+  {
+    title: "Method Man",
+    year: 2024,
+    roles: "Editor · Sound Designer · Colorist",
+    meta: "Short · dir. Alberto Aizenman",
+  },
+
+  {
+    title: "Boxes",
+    year: 2024,
+    roles: "Editor · Sound Designer · Colorist",
+    meta: "Short · dir. Esha More",
+  },
+
+  {
+    title: "Written Off",
+    year: 2024,
+    roles: "Colorist",
+    meta: "Short · dir. Bay Tamboury",
+  },
+
+  {
+    title: "At What Cost",
+    year: 2023,
+    roles: "Editor · Script Consultant",
+    meta: "Short · dir. Christine An",
+  },
+
+  {
+    title: "Heartbeat by Heartbeat",
+    year: 2023,
+    roles: "Editor · Sound Designer · Colorist · Script Consultant",
+    meta: "Short · dir. Alex Shores",
+  },
+
+  {
+    title: "Earworm",
+    year: 2023,
+    roles: "Assistant Editor",
+    meta: "Short · dir. Timothy Choi",
+  },
+
+  {
+    title: "With a Twist",
+    year: 2023,
+    roles: "1st Assistant Camera",
+    meta: "Short · dir. Zoe Moore",
+  },
+
+  {
+    title: "Day of Judgment",
+    year: 2023,
+    roles: "Director · DP · Editor · Sound Designer · Colorist · Camera Operator",
+    meta: "Short",
+  },
+
+  {
+    title: "Miss Fortune",
+    year: 2022,
+    roles:
+      "Editor · Sound Designer · Sound Mixer · Executive Producer",
+    meta: "Short · dir. Ellie Pink",
+  },
+
+  {
+    title: "Antidote",
+    year: 2022,
+    roles:
+      "Producer · Editor · Sound Designer",
+    meta: "Short · dir. Sam Amado-Mejia",
+  },
+
+  {
+    title: "Birthday Bash",
+    year: 2021,
+    roles: "Director · DP · Editor · Story by/Writer",
+    meta: "Short",
+  },
+
+  {
+    title: "Finding Farewell",
+    year: 2022,
+    roles: "Editor · Colorist · Sound Designer · Sound Mixer",
+    meta: "Short · dir. Alex Shores",
+  },
+
+  {
+    title: "Premeditated",
+    year: 2022,
+    roles: "Editor · Sound Designer · Sound Mixer · Executive Producer",
+    meta: "Short · dir. Elle Misko",
+  },
+
+  {
+    title: "Boxing Day",
+    year: 2023,
+    roles: "Editor · Sound Designer · Camera Operator",
+    meta: "Short · dir. Owen Smith, Sam Amado-Mejia",
+  },
+
+  {
+    title: "Portland Documentary",
+    year: 2022,
+    roles: "Editor",
+    meta: "Short Doc",
+  },
+
+  {
+    title: "Small Things",
+    year: "TBD",
+    roles: "Editor",
+    meta: "Short · dir. Katie Sorrell",
+  },
+
+  {
+    title: "I NI",
+    year: "TBD",
+    roles: "Editor",
+    meta: "Short · dir. Ryan Herh",
+  },
+
+  {
+    title: "Red Bull Parody",
+    year: 2023,
+    roles: "Editor · Gaffer · Camera Operator",
+    meta: "Spec Ad",
+  },
+
+  {
+    title: "Truth Serum",
+    year: 2023,
+    roles: "Editor",
+    meta: "Spec Title Sequence",
+  },
+
+  {
+    title: "London Summer 2022",
+    year: 2022,
+    roles: "Editor · Story by/Writer",
+    meta: "Video",
+  },
+
+  {
+    title: "TRAVEL",
+    year: 2022,
+    roles: "Editor · Narrator · Story by/Writer",
+    meta: "Video",
+  },
+
+  {
+    title: "Art Lost and Found: The Nazis' Decimation of Culture",
+    year: 2019,
+    roles: "Additional Editor · Camera Operator · Narrator · Researcher",
+    meta: "Short Doc",
+  },
+
+  {
+    title: "Third World Liberation Strikes",
+    year: 2018,
+    roles: "Additional Editor · Camera Operator · Sound Mixer",
+    meta: "Short Doc",
+  },
+
+  {
+    title: "Piece and Glory",
+    year: "TBD",
+    roles: "Colorist · Sound Designer",
+    meta: "Short · dir. Sanjana Kumar",
+  },
+
+  {
+    title: "Ether",
+    year: "TBD",
+    roles: "Coder",
+    meta: "Feature · dir. Dalton Thorvilson",
+  },
+
+  {
+    title: "Pacifist",
+    year: "TBD",
+    roles: "Sound Mixer · Production Assistant",
+    meta: "Short · dir. Sam Amado-Mejia",
+  },
+
+  {
+    title: "Waiting for Gabby",
+    year: 2023,
+    roles: "1st Assistant Camera · Gaffer",
+    meta: "Short · dir. Ryleigh Fortin",
+  },
+
+  {
+    title: "Dollhouse",
+    year: 2022,
+    roles: "1st Assistant Camera",
+    meta: "Short · dir. Alexa Salimpour",
+  },
+
+  {
+    title: "Stop",
+    year: 2022,
+    roles: "1st Assistant Camera",
+    meta: "Short · dir. Skyler Piltch",
+  },
+
+  {
+    title: "BUTV10 Shadows: Voice of an Angel",
+    year: 2022,
+    roles: "1st Assistant Camera",
+    meta: "Short · dir. Owen Smith",
+  },
+
+  {
+    title: "Freelance Work",
+    year: 2020,
+    roles: "2nd Assistant Camera",
+    meta: "Commercial · dir. Omar Massoud",
+  },
+
+  {
+    title: "Safe House",
+    year: 2023,
+    roles: "Gaffer",
+    meta: "Short · dir. Owen Smith",
+  },
+
+  {
+    title: "Fun and Games",
+    year: 2023,
+    roles: "Gaffer",
+    meta: "Short · dir. Sam Amado-Mejia",
+  },
+
+  {
+    title: "Pinheads",
+    year: 2022,
+    roles: "Sound Mixer · Production Assistant",
+    meta: "Short · dir. Elle Misko",
+  },
+
+  {
+    title: "Love's A Battlefield",
+    year: 2022,
+    roles: "Sound Mixer",
+    meta: "Short · dir. Ellie Pink",
+  },
+
+  {
+    title: "Blunt Force Trauma",
+    year: 2021,
+    roles: "Sound Mixer",
+    meta: "Short · dir. Kaylee Chin",
+  },
+
+  {
+    title: "Teddy's Day Off",
+    year: 2022,
+    roles: "Story by/Writer",
+    meta: "Short · dir. Pablo Barrera",
+  },
+
+  {
+    title: "A Casual Conversation",
+    year: 2022,
+    roles: "Story by/Writer",
+    meta: "Short · dir. Daniel Jung",
+  },
+
+  {
+    title: "Ash Wednesday",
+    year: 2023,
+    roles: "Script Consultant",
+    meta: "Short · dir. Grace O'Brien",
+  },
+
+  {
+    title: "The Lovers",
+    year: 2021,
+    roles: "Narrator · Production Assistant",
+    meta: "Short · dir. Kaylee Chin",
+  },
+
+];
 ---
 
 <BaseLayout title="Creative Portfolio | Eliana Mugar">
+  
   <main class="section-page">
     <a href="/" class="back-link">← Home</a>
 
-    <section class="section-hero">
-      <p class="eyebrow">Creative Portfolio</p>
-      <h1>Photography, film, and visual archives.</h1>
-    </section>
+    <section class="creative-hero">
+      <h1 class="creative-title">
+        CREATIVE PORTFOLIO
+      </h1>
+
+      <p class="creative-subtitle">
+        <span class="creative-prompt">&gt;</span>
+        Eliana Mugar
+      </p>
 
     <section class="creative-grid">
       <a href="/creative/photography" class="creative-card photography-card">
         <div>
-          <p class="eyebrow">01</p>
           <h2>Photography</h2>
         </div>
       </a>
 
       <a href="/creative/film" class="creative-card film-card">
         <div>
-          <p class="eyebrow">02</p>
           <h2>Film & Video</h2>
         </div>
       </a>
 
       <a href="/creative/posters" class="creative-card posters-card">
         <div>
-          <p class="eyebrow">03</p>
           <h2>Posters & Design</h2>
         </div>
       </a>
     </section>
+
+    <section class="creative-dropdown-section" id="creative-dropdown-section">
+      <div class="creative-dropdown-row">
+        <button class="dropdown-trigger" id="credits-trigger" type="button">
+          <span class="dropdown-arrow">&gt;</span>
+          Credits
+        </button>
+
+        <button class="dropdown-trigger" id="achievements-trigger" type="button">
+          <span class="dropdown-arrow">&gt;</span>
+          Notable Achievements
+        </button>
+      </div>
+
+      <div class="creative-dropdown-content" id="credits-content">
+        <div class="film-list">
+          {credits
+            .sort((a, b) => {
+              const yearA = typeof a.year === "number" ? a.year : 0;
+              const yearB = typeof b.year === "number" ? b.year : 0;
+              return yearB - yearA;
+            })
+            .map((credit) => (
+              <article class="film-entry">
+                <div>
+                  <h2>{credit.title}</h2>
+                  <p class="credit-year">{credit.year}</p>
+                  <p class="credit-director">{credit.meta}</p>
+                  <p class="credit-roles">{credit.roles}</p>
+                </div>
+              </article>
+            ))}
+        </div>
+      </div>
+
+      <div class="creative-dropdown-content" id="achievements-content">
+        <div class="achievement-list">
+            {[
+              {
+                title: "Boxes",
+                meta: "dir. Esha More · 2023 · Editor",
+                achievements: [
+                  "Official Selection – Post Alley Film Festival, Seattle, WA",
+                  "Official Selection – Tasveer Film Festival, Seattle, WA",
+                ],
+              },
+              {
+                title: "A Day in Death Valley",
+                meta: "2024 · Photographer",
+                achievements: [
+                  "Finalist – Urbanite Arts & Film Festival, Peekskill, NY",
+                ],
+              },
+              {
+                title: "At What Cost",
+                meta: "dir. Christine An · 2023 · Editor",
+                achievements: [
+                  "Outstanding Achievement Award – Indie Short Fest, Los Angeles, CA",
+                  "Official Selection – Independent Shorts Awards, Los Angeles, CA",
+                  "Official Selection – Venice Shorts, Los Angeles, CA",
+                ],
+              },
+              {
+                title: "Heartbeat by Heartbeat",
+                meta: "dir. Alex Shores · 2023 · Editor",
+                achievements: [
+                  "Semi-Finalist (Best Actor, Stephen) – Big Fridge International Film Festival, London, UK",
+                  "Official Selection – Ridgewood Guild International Film Festival, Ridgewood, NJ",
+                  "Best Student Film – Dublin Movie Awards",
+                  "Official Selection – Lonely Seal International Film Festival, Boston, MA",
+                  "Official Selection – Iowa Independent Film Festival",
+                  "Semi-Finalist – Student Los Angeles Film Awards",
+                  "Honorable Mention – Awareness Film Festival, Los Angeles, CA",
+                ],
+              },
+              {
+                title: "Miss Fortune",
+                meta: "dir. Ellie Pink · 2022 · Editor, Sound Designer, Sound Mixer, Executive Producer",
+                achievements: [
+                  "Best Undergraduate Student Film – Ridgewood Guild International Film Festival, Ridgewood, NJ",
+                  "Official Selection – HER Vision Film Festival, New York, NY",
+                  "Official Selection – Reality Bytes Independent Student Film Festival, Northern Illinois University, IL",
+                  "Critics’ Choice – Iowa Independent Film Festival, Mason City, IA",
+                  "Finalist – Big Fridge International Film Festival, London, UK",
+                  "Official Selection – Commonwealth Film Festival, Boston, MA",
+                ],
+              },
+              {
+                title: "Antidote",
+                meta: "dir. Sam Amado-Mejia · 2022 · Editor, Sound Designer, Producer",
+                achievements: [
+                  "Best Editing Nomination, Audience Favorite Award Winner – Flamingo Film Festival, Fort Lauderdale, FL",
+                  "Best Performance – Commonwealth Film Festival, Boston, MA",
+                  "Honorable Mention – Student World Impact Film Festival",
+                  "Official Selection – Student Live Film Festival",
+                ],
+              },
+              {
+                title: "Fun and Games",
+                meta: "dir. Sam Amado-Mejia · 2023 · “Bear”, Gaffer",
+                achievements: [
+                  "Official Selection – Commonwealth Film Festival, Boston, MA",
+                  "Finalist – Student World Impact Film Festival",
+                  "Award Winner – FilmOneFest (Films Under 2 Minutes), Atlantic Highlands, NJ",
+                  "Official Selection – Student Live Film Festival",
+                ],
+              },
+              {
+                title: "Day of Judgment",
+                meta: "2023 · Director, DP, Editor, Sound Designer",
+                achievements: [
+                  "Semi-Finalist – Student World Impact Film Festival",
+                  "Official Selection – Student Live Film Festival",
+                  "Quarter-Finalist – WideScreen Film Festival",
+                ],
+              },
+              {
+                title: 'BUTV10 Shadows: “Voice of an Angel”',
+                meta: "dir. Owen Smith · 2023 · 1st Assistant Camera",
+                achievements: [
+                  "College/University Fiction Short Form Winner – NATAS Boston/New England Chapter Student Production Emmys, Boston, MA",
+                  "Best Cinematography – Commonwealth Film Festival, Boston, MA",
+                ],
+              },
+              {
+                title: "Teddy’s Day Off",
+                meta: "dir. Pablo Barrera · 2022 · Writer",
+                achievements: [
+                  "50k+ views on YouTube",
+                ],
+              },
+            ].map((item) => (
+              <article class="achievement-entry">
+                <h2>{item.title}</h2>
+                <p class="achievement-meta">{item.meta}</p>
+
+                <ul>
+                  {item.achievements.map((achievement) => (
+                    <li>{achievement}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+      </div>
+    </section>
+
+<script>
+  const section = document.getElementById("creative-dropdown-section");
+
+  const creditsTrigger = document.getElementById("credits-trigger");
+  const achievementsTrigger = document.getElementById("achievements-trigger");
+
+  const creditsContent = document.getElementById("credits-content");
+  const achievementsContent = document.getElementById("achievements-content");
+
+  function showPanel(panel: "credits" | "achievements") {
+    const creditsIsOpen = creditsContent?.classList.contains("is-open");
+    const achievementsIsOpen = achievementsContent?.classList.contains("is-open");
+
+    const shouldClose =
+      (panel === "credits" && creditsIsOpen) ||
+      (panel === "achievements" && achievementsIsOpen);
+
+    creditsTrigger?.classList.remove("is-active");
+    achievementsTrigger?.classList.remove("is-active");
+    creditsContent?.classList.remove("is-open");
+    achievementsContent?.classList.remove("is-open");
+
+    if (shouldClose) return;
+
+    const showCredits = panel === "credits";
+
+    creditsTrigger?.classList.toggle("is-active", showCredits);
+    achievementsTrigger?.classList.toggle("is-active", !showCredits);
+
+    creditsContent?.classList.toggle("is-open", showCredits);
+    achievementsContent?.classList.toggle("is-open", !showCredits);
+
+    setTimeout(() => {
+      section?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  }
+
+  creditsTrigger?.addEventListener("click", () => showPanel("credits"));
+  achievementsTrigger?.addEventListener("click", () => showPanel("achievements"));
+</script>
+
   </main>
 </BaseLayout>

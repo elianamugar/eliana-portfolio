@@ -8,7 +8,7 @@ const GOODREADS_CURRENTLY_READING_RSS = "https://www.goodreads.com/review/list_r
 const GOODREADS_READ_RSS =
   "https://www.goodreads.com/review/list_rss/66067615?key=YOUR_KEY&shelf=read&sort=date_read";
 
-function extractGoodreadsRating(item) {
+  function extractGoodreadsRating(item) {
   const html =
     item.content ||
     item["content:encoded"] ||
