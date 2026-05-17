@@ -944,15 +944,10 @@ h1 {
 }
 
 .media-section {
-  margin-top: 6rem;
-
+  margin-top: 5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-
-  gap: 3rem;
-
-  width: min(1000px, 100%);
-  margin-inline: auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .media-column {
@@ -976,14 +971,8 @@ h1 {
 }
 
 .media-list {
-  list-style: none;
-
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  display: grid;
+  gap: 0.75rem;
 }
 
 .media-list li a {
@@ -1055,17 +1044,16 @@ h1 {
 
 .media-item {
   display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 0.9rem;
+  grid-template-columns: 42px 1fr;
+  gap: 0.75rem;
   align-items: center;
-  min-width: 0;
 }
 
 .media-item img {
-  width: 52px;
-  height: 78px;
+  width: 42px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 5px;
   background: #111;
   display: block;
   flex-shrink: 0;
@@ -2105,7 +2093,7 @@ h1 {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: #a89984;
   margin-bottom: 0.22rem;
 }
 
@@ -2118,4 +2106,28 @@ h1 {
 
 .achievements-dropdown {
   grid-column: 2;
+}
+
+/* ===== Credits ===== */
+
+.credit-year {
+  color: #d79921 !important;
+}
+
+.credit-director {
+  color: #689d6a !important;
+}
+
+.credit-roles {
+  color: #a89984 !important;
+}
+
+/* ===== Achievements ===== */
+
+.achievement-meta {
+  color: #689d6a !important;
+}
+
+.achievement-entry li {
+  color: #a89984 !important;
 }

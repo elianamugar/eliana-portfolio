@@ -77,14 +77,14 @@ const sortedReadItems = readItems
   });
 
 const mediaFeed = {
-  watching: letterboxdItems.slice(0, 6).map((item) => ({
+  watching: letterboxdItems.slice(0, 4).map((item) => ({
     title: item.title,
     link: item.link,
     date: item.isoDate || item.pubDate,
     image: extractImage(item),
   })),
 
-  currentlyReading: currentlyReadingItems.slice(0, 3).map((item) => ({
+  currentlyReading: currentlyReadingItems.slice(0, 2).map((item) => ({
     title: item.title,
     link: item.link,
     date: item.isoDate || item.pubDate,
@@ -92,7 +92,7 @@ const mediaFeed = {
     rating: extractGoodreadsRating(item),
   })),
 
-  read: readItems.slice(0, 6).map((item) => ({
+  read: readItems.slice(0, 3).map((item) => ({
     title: item.title,
     link: item.link,
     date: item.isoDate || item.pubDate,
