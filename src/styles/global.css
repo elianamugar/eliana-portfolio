@@ -2299,9 +2299,9 @@ h1 {
 }
 
 .global-site-title {
-  position: fixed;
+  position: absolute;
 
-  top: 1.15rem;
+  top: 2.2rem;
   left: 50%;
 
   transform: translateX(-50%);
@@ -2314,7 +2314,7 @@ h1 {
     "IBM Plex Mono",
     monospace;
 
-  font-size: 0.78rem;
+  font-size: 1rem;
 
   font-weight: 500;
 
