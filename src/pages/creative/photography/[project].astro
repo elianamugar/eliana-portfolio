@@ -2,9 +2,17 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { photoProjects } from "../../../data/photoProjects";
 
+export async function getStaticPaths() {
+  return Object.keys(photoProjects).map((project) => ({
+    params: { project },
+  }));
+}
+
 type PhotoProjects = Record<string, string[]>;
 
 const photoProjectData = photoProjects as PhotoProjects;
+
+
 
 const projectDates: Record<string, string> = {
   alaska: "2021-08",
@@ -60,12 +68,6 @@ const projectDates: Record<string, string> = {
   south_lake_tahoe: "2023-08",
   vienna: "2024-06",
 };
-
-export async function getStaticPaths() {
-  return Object.keys(photoProjectData).map((project) => ({
-    params: { project },
-  }));
-}
 
 const project = Astro.params.project as string;
 
