@@ -1,6 +1,131 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+type Achievement = {
+  title: string;
+  meta: string;
+  achievements: string[];
+};
+
+const achievements: Achievement[] =[
+      {
+        title: "Boxes",
+        meta: "dir. Esha More · 2023 · Editor",
+        achievements: [
+          "Official Selection – Post Alley Film Festival, Seattle, WA",
+          "Official Selection – Tasveer Film Festival, Seattle, WA",
+        ],
+      },
+      {
+        title: "A Day in Death Valley",
+        meta: "2024 · Photographer",
+        achievements: [
+          "Finalist – Urbanite Arts & Film Festival, Peekskill, NY",
+        ],
+      },
+      {
+        title: "At What Cost",
+        meta: "dir. Christine An · 2023 · Editor",
+        achievements: [
+          "Outstanding Achievement Award – Indie Short Fest, Los Angeles, CA",
+          "Official Selection – Independent Shorts Awards, Los Angeles, CA",
+          "Official Selection – Venice Shorts, Los Angeles, CA",
+        ],
+      },
+      {
+        title: "Heartbeat by Heartbeat",
+        meta: "dir. Alex Shores · 2023 · Editor",
+        achievements: [
+          "Semi-Finalist (Best Actor, Stephen) – Big Fridge International Film Festival, London, UK",
+          "Official Selection – Ridgewood Guild International Film Festival, Ridgewood, NJ",
+          "Best Student Film – Dublin Movie Awards",
+          "Official Selection – Lonely Seal International Film Festival, Boston, MA",
+          "Official Selection – Iowa Independent Film Festival",
+          "Semi-Finalist – Student Los Angeles Film Awards",
+          "Honorable Mention – Awareness Film Festival, Los Angeles, CA",
+        ],
+      },
+      {
+        title: "Miss Fortune",
+        meta: "dir. Ellie Pink · 2022 · Editor, Sound Designer, Sound Mixer, Executive Producer",
+        achievements: [
+          "Best Undergraduate Student Film – Ridgewood Guild International Film Festival, Ridgewood, NJ",
+          "Official Selection – HER Vision Film Festival, New York, NY",
+          "Official Selection – Reality Bytes Independent Student Film Festival, Northern Illinois University, IL",
+          "Critics’ Choice – Iowa Independent Film Festival, Mason City, IA",
+          "Finalist – Big Fridge International Film Festival, London, UK",
+          "Official Selection – Commonwealth Film Festival, Boston, MA",
+        ],
+      },
+      {
+        title: "Antidote",
+        meta: "dir. Sam Amado-Mejia · 2022 · Editor, Sound Designer, Producer",
+        achievements: [
+          "Best Editing Nomination, Audience Favorite Award Winner – Flamingo Film Festival, Fort Lauderdale, FL",
+          "Best Performance – Commonwealth Film Festival, Boston, MA",
+          "Honorable Mention – Student World Impact Film Festival",
+          "Official Selection – Student Live Film Festival",
+        ],
+      },
+      {
+        title: "Fun and Games",
+        meta: "dir. Sam Amado-Mejia · 2023 · “Bear”, Gaffer",
+        achievements: [
+          "Official Selection – Commonwealth Film Festival, Boston, MA",
+          "Finalist – Student World Impact Film Festival",
+          "Award Winner – FilmOneFest (Films Under 2 Minutes), Atlantic Highlands, NJ",
+          "Official Selection – Student Live Film Festival",
+        ],
+      },
+      {
+        title: "Day of Judgment",
+        meta: "2023 · Director, DP, Editor, Sound Designer",
+        achievements: [
+          "Semi-Finalist – Student World Impact Film Festival",
+          "Official Selection – Student Live Film Festival",
+          "Quarter-Finalist – WideScreen Film Festival",
+        ],
+      },
+      {
+        title: 'BUTV10 Shadows: “Voice of an Angel”',
+        meta: "dir. Owen Smith · 2023 · 1st Assistant Camera",
+        achievements: [
+          "College/University Fiction Short Form Winner – NATAS Boston/New England Chapter Student Production Emmys, Boston, MA",
+          "Best Cinematography – Commonwealth Film Festival, Boston, MA",
+        ],
+      },
+      {
+        title: "Teddy’s Day Off",
+        meta: "dir. Pablo Barrera · 2022 · Writer",
+        achievements: [
+          "50k+ views on YouTube",
+        ],
+      },
+    ];
+
+const sortedAchievements = [...achievements].sort((a, b) => {
+  const yearA = Number(a.meta.match(/\d{4}/)?.[0] || 0);
+  const yearB = Number(b.meta.match(/\d{4}/)?.[0] || 0);
+
+  return yearB - yearA;
+});
+
+const groupedAchievements: Record<string, Achievement[]> =
+  sortedAchievements.reduce(
+    (acc: Record<string, Achievement[]>, item: Achievement) => {
+      const year = item.meta.match(/\d{4}/)?.[0] || "Unknown";
+
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+
+      acc[year].push(item);
+
+      return acc;
+    },
+    {}
+  );
+
 const credits = [
   {
     title: "Pyarellal",
@@ -360,115 +485,35 @@ const credits = [
 
       <div class="creative-dropdown-content" id="achievements-content">
         <div class="achievement-list">
-            {[
-              {
-                title: "Boxes",
-                meta: "dir. Esha More · 2023 · Editor",
-                achievements: [
-                  "Official Selection – Post Alley Film Festival, Seattle, WA",
-                  "Official Selection – Tasveer Film Festival, Seattle, WA",
-                ],
-              },
-              {
-                title: "A Day in Death Valley",
-                meta: "2024 · Photographer",
-                achievements: [
-                  "Finalist – Urbanite Arts & Film Festival, Peekskill, NY",
-                ],
-              },
-              {
-                title: "At What Cost",
-                meta: "dir. Christine An · 2023 · Editor",
-                achievements: [
-                  "Outstanding Achievement Award – Indie Short Fest, Los Angeles, CA",
-                  "Official Selection – Independent Shorts Awards, Los Angeles, CA",
-                  "Official Selection – Venice Shorts, Los Angeles, CA",
-                ],
-              },
-              {
-                title: "Heartbeat by Heartbeat",
-                meta: "dir. Alex Shores · 2023 · Editor",
-                achievements: [
-                  "Semi-Finalist (Best Actor, Stephen) – Big Fridge International Film Festival, London, UK",
-                  "Official Selection – Ridgewood Guild International Film Festival, Ridgewood, NJ",
-                  "Best Student Film – Dublin Movie Awards",
-                  "Official Selection – Lonely Seal International Film Festival, Boston, MA",
-                  "Official Selection – Iowa Independent Film Festival",
-                  "Semi-Finalist – Student Los Angeles Film Awards",
-                  "Honorable Mention – Awareness Film Festival, Los Angeles, CA",
-                ],
-              },
-              {
-                title: "Miss Fortune",
-                meta: "dir. Ellie Pink · 2022 · Editor, Sound Designer, Sound Mixer, Executive Producer",
-                achievements: [
-                  "Best Undergraduate Student Film – Ridgewood Guild International Film Festival, Ridgewood, NJ",
-                  "Official Selection – HER Vision Film Festival, New York, NY",
-                  "Official Selection – Reality Bytes Independent Student Film Festival, Northern Illinois University, IL",
-                  "Critics’ Choice – Iowa Independent Film Festival, Mason City, IA",
-                  "Finalist – Big Fridge International Film Festival, London, UK",
-                  "Official Selection – Commonwealth Film Festival, Boston, MA",
-                ],
-              },
-              {
-                title: "Antidote",
-                meta: "dir. Sam Amado-Mejia · 2022 · Editor, Sound Designer, Producer",
-                achievements: [
-                  "Best Editing Nomination, Audience Favorite Award Winner – Flamingo Film Festival, Fort Lauderdale, FL",
-                  "Best Performance – Commonwealth Film Festival, Boston, MA",
-                  "Honorable Mention – Student World Impact Film Festival",
-                  "Official Selection – Student Live Film Festival",
-                ],
-              },
-              {
-                title: "Fun and Games",
-                meta: "dir. Sam Amado-Mejia · 2023 · “Bear”, Gaffer",
-                achievements: [
-                  "Official Selection – Commonwealth Film Festival, Boston, MA",
-                  "Finalist – Student World Impact Film Festival",
-                  "Award Winner – FilmOneFest (Films Under 2 Minutes), Atlantic Highlands, NJ",
-                  "Official Selection – Student Live Film Festival",
-                ],
-              },
-              {
-                title: "Day of Judgment",
-                meta: "2023 · Director, DP, Editor, Sound Designer",
-                achievements: [
-                  "Semi-Finalist – Student World Impact Film Festival",
-                  "Official Selection – Student Live Film Festival",
-                  "Quarter-Finalist – WideScreen Film Festival",
-                ],
-              },
-              {
-                title: 'BUTV10 Shadows: “Voice of an Angel”',
-                meta: "dir. Owen Smith · 2023 · 1st Assistant Camera",
-                achievements: [
-                  "College/University Fiction Short Form Winner – NATAS Boston/New England Chapter Student Production Emmys, Boston, MA",
-                  "Best Cinematography – Commonwealth Film Festival, Boston, MA",
-                ],
-              },
-              {
-                title: "Teddy’s Day Off",
-                meta: "dir. Pablo Barrera · 2022 · Writer",
-                achievements: [
-                  "50k+ views on YouTube",
-                ],
-              },
-            ].map((item) => (
-              <article class="achievement-entry">
-                <h2>{item.title}</h2>
-                <p class="achievement-meta">{item.meta}</p>
+          <div class="achievements-columns">
+          {Object.entries(groupedAchievements)
+            .sort(([a], [b]) => Number(b) - Number(a))
+            .map(([year, items]) => (
+              <section class="achievement-year-group">
+                <h2 class="achievement-year-heading">
+                  {year}
+                </h2>
 
-                <ul>
-                  {item.achievements.map((achievement) => (
-                    <li>{achievement}</li>
+                <div class="achievement-list">
+                  {items.map((item) => (
+                    <article class="achievement-entry">
+                      <h2>{item.title}</h2>
+
+                      <p class="achievement-meta">
+                        {item.meta}
+                      </p>
+
+                      <ul>
+                        {item.achievements.map((achievement) => (
+                          <li>{achievement}</li>
+                        ))}
+                      </ul>
+                    </article>
                   ))}
-                </ul>
-              </article>
+                  </div>
+                </div>
+              </section>
             ))}
-          </div>
-      </div>
-    </section>
 
 <script>
   const section = document.getElementById("creative-dropdown-section");
