@@ -15,12 +15,12 @@ const GOODREADS_READ_RSS =
     item.description ||
     "";
 
-  const match =
-    html.match(/user_rating:\s*(\d+)/i) ||
-    html.match(/rating:\s*(\d+)/i);
+  const match = html.match(/(?:^|<br\/?>|\n)\s*rating:\s*(\d+)/i);
 
   return match ? Number(match[1]) : null;
 }
+
+
 
 function extractGoodreadsReadDate(item) {
   const html =

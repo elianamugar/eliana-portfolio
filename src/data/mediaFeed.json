@@ -43,7 +43,7 @@
       "link": "https://www.goodreads.com/review/show/7544131305?utm_medium=api&utm_source=rss",
       "date": "2026-05-11T02:21:18.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765806938l/203200544._SX50_.jpg",
-      "rating": 3
+      "rating": 0
     },
     {
       "title": "International Relations Theory",
@@ -60,7 +60,7 @@
       "date": "2026-05-11T02:17:41.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389227856l/20494944._SY75_.jpg",
       "readDate": "2026-05-11T02:17:41.000Z",
-      "rating": 4
+      "rating": 5
     },
     {
       "title": "When He Was Wicked (Bridgertons, #6)",
@@ -68,7 +68,7 @@
       "date": "2026-03-08T06:23:25.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1274212205l/110396._SY75_.jpg",
       "readDate": "2026-03-08T06:23:25.000Z",
-      "rating": 3
+      "rating": 2
     },
     {
       "title": "A Portrait of the Artist as a Young Man",
@@ -76,7 +76,7 @@
       "date": "2026-03-03T23:09:45.000Z",
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356142126l/14576054._SY75_.jpg",
       "readDate": "2026-03-03T23:09:45.000Z",
-      "rating": 3
+      "rating": 4
     }
   ]
 }
