@@ -2413,3 +2413,30 @@ h1 {
 
   transform: translateY(-2px);
 }
+
+@media (max-width: 900px) {
+  .media-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-section {
+    margin-top: 3rem;
+  }
+
+  .media-column {
+    padding: 1.1rem;
+  }
+
+  .media-item {
+    grid-template-columns: 38px 1fr;
+    gap: 0.7rem;
+  }
+
+  .media-item img {
+    width: 38px;
+    height: 56px;
+  }
+}
