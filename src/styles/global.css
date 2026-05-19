@@ -2304,7 +2304,7 @@ h1 {
 
   font-size: 0.78rem;
 
-  color: #689d6a;
+  color: var(--blue);
 
   letter-spacing: 0.08em;
 }
