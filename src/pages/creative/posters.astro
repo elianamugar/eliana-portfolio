@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { posters } from "../../data/posters";
+
+const R2_BASE_URL = "https://pub-572ebe461d354c81b241244275f0b4f2.r2.dev"
 ---
 
 <BaseLayout title="Posters | Eliana Mugar">
@@ -12,5 +15,59 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </h1>
 
     </section>
+
+    <section class="photo-grid">
+      {posters.map((poster) => (
+        <button
+          class="poster-card lightbox-trigger"
+          data-img={`${R2_BASE_URL}/posters/${poster.image}`}
+          data-title={poster.title}
+        >
+          <img
+            src={`${R2_BASE_URL}/posters/${poster.image}`}
+            alt={poster.title}
+            loading="lazy"
+          />
+
+          <div class="poster-card-overlay">
+            <h2>{poster.title}</h2>
+          </div>
+        </button>
+      ))}
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">
+        ×
+      </button>
+
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.getElementById("lightbox-close");
+
+      document.querySelectorAll(".lightbox-trigger").forEach((card) => {
+        card.addEventListener("click", () => {
+          const src = card.dataset.img;
+
+          lightboxImg.src = src;
+          lightbox.classList.add("active");
+        });
+      });
+
+      closeBtn?.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox?.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
+      });
+    </script>
+
   </main>
 </BaseLayout>

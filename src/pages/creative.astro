@@ -1,6 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import photographyCover from "../assets/creative/photography-cover.jpg";
+import filmCover from "../assets/creative/film-cover.jpg";
+import postersCover from "../assets/creative/poster-cover.webp";
+
 type Achievement = {
   title: string;
   meta: string;
@@ -431,22 +435,35 @@ const credits = [
 
     <section class="creative-grid">
       <a href="/creative/photography" class="creative-card photography-card">
+        <img
+          src={photographyCover.src}
+          alt="Photography"
+        />
         <div>
           <h2>Photography</h2>
         </div>
       </a>
 
-      <a href="/creative/film" class="creative-card film-card">
+      <a href="/creative/posters" class="creative-card posters-card">
+        <img
+          src={postersCover.src}
+          alt="Posters & Design"
+        />
+        <div>
+          <h2>Posters & Design</h2>
+        </div>
+      </a>
+
+      <a href="/creative/film" class="creative-card creative-film-card">
+        <img
+          src={filmCover.src}
+          alt="Film & Video"
+        />
         <div>
           <h2>Film & Video</h2>
         </div>
       </a>
 
-      <a href="/creative/posters" class="creative-card posters-card">
-        <div>
-          <h2>Posters & Design</h2>
-        </div>
-      </a>
     </section>
 
     <section class="creative-dropdown-section" id="creative-dropdown-section">

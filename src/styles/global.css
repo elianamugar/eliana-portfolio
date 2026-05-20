@@ -233,9 +233,13 @@ h1 {
 
 .creative-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  justify-content: center;
+  align-items: start;
+  grid-template-columns: repeat(3, 360px);
+  gap: 1.5rem;
   margin-top: 4rem;
+  width: fit-content;
+  margin: 4rem auto 0;
 }
 
 .creative-grid:hover .creative-card {
@@ -259,7 +263,7 @@ h1 {
   grid-row: auto;
 }
 
-.film-card,
+.creative-film-card,
 .posters-card {
   min-height: 300px;
 }
@@ -277,12 +281,26 @@ h1 {
   border: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
-  background: var(--card);
+  background: none;
   transition:
     transform 0.25s ease,
     border-color 0.55s ease,
     filter 0.55s ease,
     opacity 0.55s ease;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.creative-card img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
 }
 
 .creative-card::before {
@@ -329,10 +347,13 @@ h1 {
 }
 
 .creative-card > div {
-  width: 100%;
-  max-width: 520px;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-align: center;
 }
 
 .creative-card .eyebrow {
@@ -365,7 +386,7 @@ h1 {
     #171717;
 }
 
-.film-card::before {
+.creative-film-card::before {
   background:
     linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1)),
     radial-gradient(circle at 30% 30%, #5d3847, transparent 35%),
@@ -513,6 +534,7 @@ h1 {
   width: 100%;
   height: 100%;
   min-height: 280px;
+  max-height: 420px;
   object-fit: cover;
   display: block;
   transition:
@@ -644,6 +666,7 @@ h1 {
     linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
   color: var(--text);
   text-decoration: none;
+  object-fit: cover !important;
 }
 
 .film-card:hover {
@@ -2439,4 +2462,79 @@ h1 {
     width: 38px;
     height: 56px;
   }
+}
+
+.creative-grid .creative-card {
+  aspect-ratio: 3 / 2 !important;
+  min-height: 0 !important;
+  height: auto;
+  width: 360px;
+}
+
+.creative-grid .creative-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creative-grid .posters-card {
+  aspect-ratio: 2 / 3 !important;
+  width: 260px;
+  justify-self: center;
+}
+
+.creative-grid .photography-card,
+.creative-grid .creative-film-card {
+  margin-top: 60px;
+}
+
+.poster-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 14px;
+  background: transparent;
+}
+
+.poster-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  object-fit: contain;
+}
+
+.poster-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72),
+    rgba(0, 0, 0, 0.12),
+    transparent
+  );
+  transition: opacity 0.25s ease;
+}
+
+.poster-card:hover .poster-card-overlay {
+  opacity: 1;
+}
+
+.poster-card-overlay h2 {
+  margin: 0;
+  color: #ebdbb2;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.poster-card,
+.poster-card.lightbox-trigger {
+  border: 0;
+  padding: 0;
 }
