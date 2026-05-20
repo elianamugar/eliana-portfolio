@@ -1,6 +1,24 @@
 {
   "watching": [
     {
+      "title": "Christy, 2025 - ★★★",
+      "link": "https://letterboxd.com/elianamugar/film/christy-2025-1/",
+      "date": "2026-05-20T07:20:42.000Z",
+      "image": "https://a.ltrbxd.com/resized/film-poster/1/1/7/0/4/8/7/1170487-christy-2025-1-0-600-0-900-crop.jpg?v=eb2c154e5b"
+    },
+    {
+      "title": "The Amateur, 2025 - ★★½",
+      "link": "https://letterboxd.com/elianamugar/film/the-amateur-2025/",
+      "date": "2026-05-19T06:08:53.000Z",
+      "image": "https://a.ltrbxd.com/resized/film-poster/9/8/0/9/1/4/980914-the-amateur-2025-0-600-0-900-crop.jpg?v=f9f2219f27"
+    },
+    {
+      "title": "Slow West, 2015 - ★★★½",
+      "link": "https://letterboxd.com/elianamugar/film/slow-west/",
+      "date": "2026-05-18T06:06:30.000Z",
+      "image": "https://a.ltrbxd.com/resized/film-poster/1/5/7/8/0/7/157807-slow-west-0-600-0-900-crop.jpg?v=d681680580"
+    },
+    {
       "title": "Locks, 2009 - ★★★★½",
       "link": "https://letterboxd.com/elianamugar/film/locks/",
       "date": "2026-05-17T04:53:59.000Z",
@@ -17,32 +35,14 @@
       "link": "https://letterboxd.com/elianamugar/film/lion-panther-she-wolf/",
       "date": "2026-05-16T09:10:41.000Z",
       "image": "https://a.ltrbxd.com/resized/film-poster/6/4/3/9/1/1/643911-lion-panther-she-wolf-0-600-0-900-crop.jpg?v=898e1f5e20"
-    },
-    {
-      "title": "Limitless, 2011 - ★★★★",
-      "link": "https://letterboxd.com/elianamugar/film/limitless/",
-      "date": "2026-05-14T09:37:48.000Z",
-      "image": "https://a.ltrbxd.com/resized/film-poster/1/3/9/7/2/13972-limitless-0-600-0-900-crop.jpg?v=7599c9da90"
-    },
-    {
-      "title": "The Outrun, 2024 - ★★★½",
-      "link": "https://letterboxd.com/elianamugar/film/the-outrun/",
-      "date": "2026-05-14T07:48:08.000Z",
-      "image": "https://a.ltrbxd.com/resized/film-poster/7/0/4/1/5/5/704155-the-outrun-0-600-0-900-crop.jpg?v=5727e4a6cc"
-    },
-    {
-      "title": "We Were Here Once, 2026 - ★★★★½",
-      "link": "https://letterboxd.com/elianamugar/film/we-were-here-once/",
-      "date": "2026-05-13T20:42:10.000Z",
-      "image": "https://a.ltrbxd.com/resized/film-poster/1/3/9/0/5/5/3/1390553-we-were-here-once-0-600-0-900-crop.jpg?v=14bc278b6c"
     }
   ],
   "currentlyReading": [
     {
-      "title": "Perfection",
-      "link": "https://www.goodreads.com/review/show/7544131305?utm_medium=api&utm_source=rss",
-      "date": "2026-05-11T02:21:18.000Z",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765806938l/203200544._SX50_.jpg",
+      "title": "The Go-Between",
+      "link": "https://www.goodreads.com/review/show/8615172650?utm_medium=api&utm_source=rss",
+      "date": "2026-05-19T21:24:48.000Z",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657551246l/258079._SY75_.jpg",
       "rating": 0
     },
     {
@@ -54,6 +54,14 @@
     }
   ],
   "read": [
+    {
+      "title": "Perfection",
+      "link": "https://www.goodreads.com/review/show/7544131305?utm_medium=api&utm_source=rss",
+      "date": "2026-05-19T20:21:52.000Z",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765806938l/203200544._SX50_.jpg",
+      "readDate": "2026-05-19T20:21:52.000Z",
+      "rating": 4
+    },
     {
       "title": "Lonesome Dove (Lonesome Dove, #1)",
       "link": "https://www.goodreads.com/review/show/7423800600?utm_medium=api&utm_source=rss",
@@ -69,14 +77,6 @@
       "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1274212205l/110396._SY75_.jpg",
       "readDate": "2026-03-08T06:23:25.000Z",
       "rating": 2
-    },
-    {
-      "title": "A Portrait of the Artist as a Young Man",
-      "link": "https://www.goodreads.com/review/show/8349133296?utm_medium=api&utm_source=rss",
-      "date": "2026-03-03T23:09:45.000Z",
-      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356142126l/14576054._SY75_.jpg",
-      "readDate": "2026-03-03T23:09:45.000Z",
-      "rating": 4
     }
   ]
 }

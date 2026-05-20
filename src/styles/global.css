@@ -20,7 +20,8 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg: #f9f5d7;
+  --bg: #f8f5ef;
+  --bg-secondary: #f3ef38;
   --bg-deep: #fbf1c7;
   --card: rgba(253, 244, 193, 0.78);
   --border: rgba(60, 56, 54, 0.16);
@@ -34,6 +35,17 @@
   --blue: #076678;
   --purple: #8f3f71;
   --orange: #af3a03;
+}
+
+:root[data-theme="light"] body {
+  background:
+    linear-gradient(
+      to bottom,
+      #faf7f2,
+      #f5f1ea
+    );
+
+  color: var(--text);
 }
 
 * {
@@ -242,11 +254,17 @@ h1 {
   margin: 4rem auto 0;
 }
 
-.creative-grid:hover .creative-card {
+.creative-grid:has(.creative-card:hover) .creative-card {
   opacity: 0.35;
   filter: grayscale(0.25);
 }
 
+.creative-grid:has(.creative-card:hover) .creative-card:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+/*
 .creative-grid .creative-card:hover {
   opacity: 1;
   filter: grayscale(0);
@@ -258,6 +276,7 @@ h1 {
     filter 0.2s ease,
     transform 0.25s ease;
 }
+    */
 
 .photography-card {
   grid-row: auto;
@@ -919,7 +938,7 @@ h1 {
 :root[data-theme="light"] .portal-card,
 :root[data-theme="light"] .film-card,
 :root[data-theme="light"] .project-card {
-  background: rgba(249, 245, 215, 0.72);
+  background: rgba(255, 250, 242, 0.82);
 
   backdrop-filter: blur(6px);
 
@@ -937,6 +956,7 @@ h1 {
 }
 
 :root[data-theme="light"] .portal-card:hover {
+  background: rgba(255, 247, 235, 0.92);
   transform: translateY(-2px);
 
   border-color: rgba(181, 118, 20, 0.22);
@@ -946,7 +966,7 @@ h1 {
 }
 
 :root[data-theme="light"] .creative-card {
-  background: rgba(249, 245, 215, 0.76);
+  background: #efe8dc;
   border-color: rgba(60, 56, 54, 0.14);
   color: var(--text);
   box-shadow: 0 10px 28px rgba(60, 56, 54, 0.06);
@@ -954,6 +974,13 @@ h1 {
 
 :root[data-theme="light"] .creative-card::before {
   opacity: 0.18;
+  background:
+    linear-gradient(
+      to top,
+      rgba(40, 36, 34, 0.52),
+      rgba(40, 36, 34, 0.18),
+      transparent
+    );
 }
 
 :root[data-theme="light"] .creative-card:hover::before {
@@ -1003,7 +1030,7 @@ h1 {
 }
 
 :root[data-theme="light"] .social-links a {
-  background: #fbf1c7;
+  background: rgba(255, 250, 242, 0.86);
   color: #3c3836;
   border: 1px solid rgba(60, 56, 54, 0.18);
   box-shadow:
@@ -2486,10 +2513,16 @@ h1 {
 }
 
 .creative-grid .creative-card {
+  opacity: 1;
+  filter: grayscale(0);
   aspect-ratio: 3 / 2 !important;
   min-height: 0 !important;
   height: auto;
   width: 360px;
+  transition:
+    opacity 0.55s ease,
+    filter 0.55s ease,
+    transform 0.25s ease;
 }
 
 .creative-grid .creative-card img {
@@ -2599,4 +2632,101 @@ h1 {
 
 .project-system-card:hover h2 {
   color: var(--accent);
+}
+
+:root[data-theme="light"] .creative-card::before {
+  opacity: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(60, 56, 54, 0.72),
+      rgba(60, 56, 54, 0.22),
+      rgba(60, 56, 54, 0.08)
+    );
+}
+
+:root[data-theme="light"] .creative-card h2 {
+  color: #fbf1c7 !important;
+
+  text-shadow:
+    0 2px 12px rgba(60, 56, 54, 0.65);
+}
+
+:root[data-theme="light"] .publication-venue {
+  color: #5a5248;
+}
+
+:root[data-theme="light"] .publication-separator {
+  color: rgba(90, 82, 72, 0.35);
+}
+
+:root[data-theme="light"] .project-system-card,
+:root[data-theme="light"] .research-card {
+  background:
+    rgba(255, 250, 242, 0.82);
+
+  border:
+    1px solid rgba(60, 56, 54, 0.08);
+
+  box-shadow:
+    0 6px 22px rgba(60, 56, 54, 0.045);
+
+  backdrop-filter: blur(6px);
+}
+
+:root[data-theme="light"] .project-system-card p,
+:root[data-theme="light"] .research-card p {
+  color: #5a5248;
+}
+
+:root[data-theme="light"] .research-card-header span {
+  color: #7c6f64;
+}
+
+:root[data-theme="light"] .tag-row span {
+  background:
+    rgba(60, 56, 54, 0.03);
+
+  border:
+    1px solid rgba(60, 56, 54, 0.08);
+
+  color: #665c54;
+}
+
+/* Light mode: media/RSS sections */
+:root[data-theme="light"] .media-column {
+  background: rgba(255, 250, 242, 0.82);
+  border: 1px solid rgba(60, 56, 54, 0.08);
+  box-shadow: 0 6px 22px rgba(60, 56, 54, 0.045);
+}
+
+:root[data-theme="light"] .media-label {
+  color: #b57614;
+}
+
+:root[data-theme="light"] .media-status,
+:root[data-theme="light"] .media-date {
+  color: #7c6f64;
+}
+
+:root[data-theme="light"] .theme-toggle {
+  background: rgba(255, 250, 242, 0.88);
+
+  border: 1px solid rgba(60, 56, 54, 0.08);
+
+  color: #5a5248;
+
+  box-shadow:
+    0 4px 14px rgba(60, 56, 54, 0.045);
+
+  backdrop-filter: blur(6px);
+}
+
+:root[data-theme="light"] .theme-toggle:hover {
+  background: rgba(255, 247, 235, 0.96);
+
+  border-color: rgba(181, 118, 20, 0.16);
+
+  color: #427b58;
 }
