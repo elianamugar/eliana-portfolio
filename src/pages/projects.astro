@@ -62,10 +62,10 @@ const research = [
     title:
       "Construction and Analysis of a Map-Based Data Corpus for Tracking Linguistic Variation and Demographic Characteristic Identification",
     authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Niyu, H., Napolitano-Jawerbaum, A., Juola, P.",
-    meta: "Text as Data Conference (TADA) · Poster Presentation · 2022",
+    meta: "Text as Data Conference (TADA) · 2022",
     links: [
       {
-        label: "[poster]",
+        label: "[poster presentation]",
         href: null,
       }
     ],
@@ -74,10 +74,10 @@ const research = [
     title:
       "Construction and Analysis of a Map-Based Data Corpus for Tracking Individual Token Use and Demographic Characteristic Identification",
     authors: "Manning, T. D., Lukin, E., Klein, R., Roberts, J. C., Mugar, E., Fang, M., Juola, P.",
-    meta: "Digital Humanities Unbound · Poster Presentation · 2022",
+    meta: "Digital Humanities Unbound · 2022",
     links: [
       {
-        label: "[poster]",
+        label: "[poster presentation]",
         href: null,
       }
     ],
@@ -180,7 +180,7 @@ const featuredProjects = [
     status: "Active",
 
     description:
-      "A custom Astro portfolio integrating RSS feeds, Cloudflare R2 media infrastructure, GitHub Actions automation, and Gruvbox-inspired terminal aesthetics.",
+      "This website. A custom Astro portfolio integrating RSS feeds, Cloudflare R2 media infrastructure, GitHub Actions automation, and Gruvbox-inspired terminal aesthetics.",
 
     stack: [
       "Astro",
@@ -198,14 +198,14 @@ const featuredProjects = [
   },
 
   {
-    title: "Apple Music Car Thing Interface",
+    title: "Apple Music CarThing Interface",
 
     primaryLink: "https://github.com/elianamugar/apple-music-thing",
 
     status: "Experimental",
 
     description:
-      "Experimental interface and media-control work for Spotify Car Thing hardware using DeskThing and Apple Music integrations.",
+      "Experimental interface and media-control work for Spotify's discontinued CarThing hardware using DeskThing and Apple Music integrations.",
 
     stack: [
       "TypeScript",
@@ -220,6 +220,70 @@ const featuredProjects = [
       },
     ],
   },
+
+  {
+    title: "Adjective Typing",
+    primaryLink: "https://github.com/elianamugar/AdjectiveTyping",
+    status: "Research Tool",
+    description:
+      "Notebook-based computational linguistics project for typing adjectives using Roget’s Thesaurus. A ground-breaking metric tool for stylometry analysis and authorship attribution.",
+    stack: ["Jupyter Notebook", "Python", "Roget’s Thesaurus", "Project Gutenberg", "Stylometry"],
+    links: [{ label: "[github]", href: "https://github.com/elianamugar/AdjectiveTyping" }],
+  },
+{
+  title: "Punctuation Counter",
+  primaryLink: "https://github.com/elianamugar/Punctuation-Counter",
+  status: "Research Tool",
+  description:
+    "Text-analysis utility for counting punctuation features as stylometric parameters.",
+  stack: ["Python", "NLP", "Stylometry", "NLTK"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/Punctuation-Counter" }],
+},
+{
+  title: "Parts-of-Speech Counter",
+  primaryLink: "https://github.com/elianamugar/Parts-of-Speech-Counter",
+  status: "Research Tool",
+  description:
+    "Computational linguistics tool for extracting and counting part-of-speech patterns in text.",
+  stack: ["Python", "NLP", "NLTK", "Part-of-Speech Tagging"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/Parts-of-Speech-Counter" }],
+},
+{
+  title: "Adjective Analysis Counter Frequency",
+  primaryLink: "https://github.com/elianamugar/Adjective-Analysis-Counter-Frequency",
+  status: "Research Tool",
+  description:
+    "Python tool for counting adjective frequency in text files for stylometric and linguistic analysis.",
+  stack: ["Python", "Stylometry", "NLTK", "Computational Linguistics"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/Adjective-Analysis-Counter-Frequency" }],
+},
+{
+  title: "Proper Noun and Pronoun Remover",
+  primaryLink: "https://github.com/elianamugar/Proper-Noun-and-Pronoun-Remover",
+  status: "Research Tool",
+  description:
+    "Preprocessing script for removing proper nouns and pronouns from text before linguistic analysis.",
+  stack: ["Python", "NLP", "NLTK", "Text Preprocessing"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/Proper-Noun-and-Pronoun-Remover" }],
+},
+{
+  title: "Modifier Order",
+  primaryLink: "https://github.com/elianamugar/modifier_order",
+  status: "Research Tool",
+  description:
+    "Linguistics-oriented code experiment for analyzing modifier ordering patterns.",
+  stack: ["Python", "NLTK", "Linguistics", "Syntax"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/modifier_order" }],
+},
+{
+  title: "Text Analysis",
+  primaryLink: "https://github.com/elianamugar/text_analysis",
+  status: "Research Tool",
+  description:
+    "General text-analysis repository for computational linguistics and stylometric workflows.",
+  stack: ["Python", "Text Analysis", "NLP", "NLTK"],
+  links: [{ label: "[github]", href: "https://github.com/elianamugar/text_analysis" }],
+},
 ];
 
 const interests = [
@@ -297,38 +361,42 @@ const currentExplorations = [
     <section class="research-section">
       <p class="section-label">
         <span class="section-prompt">&gt;</span>
-        Projects & Systems
+        Projects
       </p>
 
-      <div class="research-grid">
+      <div class="research-grid project-system-grid">
         {featuredProjects.map((project) => (
-          <div
-            class="research-card clickable-card"
-            onclick={`window.open('${project.primaryLink}', '_blank')`}
-          >
-            <div class="research-card-header">
-              <h2>{project.title}</h2>
-              <span>{project.status}</span>
-            </div>
+          <article class="research-card project-system-card">
+            <a
+              href={project.primaryLink}
+              target="_blank"
+              rel="noreferrer"
+              class="project-card-main-link"
+            >
+              <div class="research-card-header">
+                <h2>{project.title}</h2>
+                <span>{project.status}</span>
+              </div>
 
-            <p>{project.description}</p>
+              <p>{project.description}</p>
+            </a>
 
             <div class="tag-row">
-              {project.links?.length > 0 && (
-                <div class="project-links">
-                  {project.links.map((link) => (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              )}
+              {project.stack.map((tag) => (
+                <span>{tag}</span>
+              ))}
             </div>
-          </div>
+
+            {project.links?.length > 0 && (
+              <div class="project-links">
+                {project.links.map((link) => (
+                  <a href={link.href} target="_blank" rel="noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
         ))}
       </div>
     </section>
@@ -352,7 +420,17 @@ const currentExplorations = [
                 )}
               />
 
-              <p>{item.meta}</p>
+              <p class="publication-meta">
+                <span class="publication-venue">
+                  {item.meta.split("·")[0]}
+                </span>
+
+                <span class="publication-separator">·</span>
+
+                <span class="publication-year">
+                  {item.meta.split("·").slice(1).join("·")}
+                </span>
+              </p>
 
               {item.links?.length > 0 && (
                 <div class="publication-links">
@@ -373,43 +451,5 @@ const currentExplorations = [
       </div>
     </section>
 
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Research Interests
-      </p>
-
-      <div class="interest-cloud">
-        {interests.map((interest) => (
-          <span>{interest}</span>
-        ))}
-      </div>
-    </section>
-
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Experimental Projects / Lab Notes
-      </p>
-
-      <ul class="lab-list">
-        {experiments.map((experiment) => (
-          <li>{experiment}</li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="research-section">
-      <p class="section-label">
-        <span class="section-prompt">&gt;</span>
-        Current Explorations
-      </p>
-
-      <ul class="lab-list muted-list">
-        {currentExplorations.map((item) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-    </section>
   </main>
 </BaseLayout>
