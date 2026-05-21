@@ -22,7 +22,7 @@ export const projectDates: Record<string, string> = {
   boston_siff: "2023-04",
   brooklyn: "2020-03",
   brussels: "2022-06",
-  california: "2023=07",
+  california: "2023-07",
   carson_beach: "2023-05",
   copenhagen: "2022-06",
   crete_greece: "2025-10",
