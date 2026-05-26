@@ -227,13 +227,17 @@ import mediaFeed from "../data/mediaFeed.json";
           <ul class="media-list">
             {mediaFeed.watching.map((item) => (
               <li class="media-item">
-                {item.image && (
-                  <img
-                    src={item.image}
-                    alt={`${item.title} cover`}
-                    loading="lazy"
-                  />
-                )}
+                {
+                  item.image ? (
+                    <img
+                      src={item.image}
+                      alt={`${item.title} cover`}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="media-placeholder"></div>
+                  )
+                }
 
                 <div class="media-meta">
                   <a href={item.link} target="_blank">
@@ -262,14 +266,17 @@ import mediaFeed from "../data/mediaFeed.json";
             <ul class="media-list">
               {mediaFeed.currentlyReading.map((item) => (
                 <li class="media-item">
-                  {item.image && (
-                    <img
-                      src={item.image}
-                      alt={`${item.title} cover`}
-                      loading="lazy"
-                    />
-                  )}
-
+                  {
+                    item.image ? (
+                      <img
+                        src={item.image}
+                        alt={`${item.title} cover`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="media-placeholder"></div>
+                    )
+                  }
                   <a href={item.link} target="_blank">
                     {item.title}
                   </a>
@@ -284,13 +291,17 @@ import mediaFeed from "../data/mediaFeed.json";
             <ul class="media-list">
               {mediaFeed.read.map((item) => (
                 <li class="media-item media-read">
-                  {item.image && (
-                    <img
-                      src={item.image}
-                      alt={`${item.title} cover`}
-                      loading="lazy"
-                    />
-                  )}
+                  {
+                    item.image ? (
+                      <img
+                        src={item.image}
+                        alt={`${item.title} cover`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="media-placeholder"></div>
+                    )
+                  }
 
                   <div class="media-meta">
                     <a href={item.link} target="_blank">
