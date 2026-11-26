@@ -308,13 +308,15 @@ import mediaFeed from "../data/mediaFeed.json";
                       {item.title}
                     </a>
 
-                    <span class="media-date">
-                      Read {new Date(item.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </span>
+                    {item.date && (
+                      <span class="media-date">
+                        Read {new Date(item.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                    )}
 
                     {item.rating && (
                       <span class="media-rating">
@@ -328,7 +330,5 @@ import mediaFeed from "../data/mediaFeed.json";
           </div>
         </div>
       </section>
-
-    </div>
   </main>
 </BaseLayout>
