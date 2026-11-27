@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { photoProjects } from "../../data/photoProjects";
+import { photoProjects, photoCovers } from "../../data/photoProjects";
 
 const R2_BASE_URL = "https://pub-572ebe461d354c81b241244275f0b4f2.r2.dev";
 
@@ -9,7 +9,7 @@ type PhotoProjects = Record<string, string[]>;
 const photoProjectData = photoProjects as PhotoProjects;
 
 import {
-  projectDates,
+  getProjectDate,
   formatProjectDate,
   formatPhotoTitle,
 } from "../../data/photoMetadata";
@@ -17,8 +17,8 @@ import {
 /*const title = formatPhotoTitle(project);*/
 
 const projects = Object.keys(photoProjectData).sort((a, b) => {
-  const dateA = projectDates[a] || "0000-00";
-  const dateB = projectDates[b] || "0000-00";
+  const dateA = getProjectDate(a) || "0000-00";
+  const dateB = getProjectDate(b) || "0000-00";
 
   return dateB.localeCompare(dateA) ||
     formatPhotoTitle(a).localeCompare(formatPhotoTitle(b));
@@ -38,13 +38,13 @@ const projects = Object.keys(photoProjectData).sort((a, b) => {
 
     <section class="project-grid">
       {projects.map((project) => {
-        const cover = `${project}.jpg`;
+        const cover = (photoCovers as Record<string, string>)[project];
         const title = formatPhotoTitle(project);
 
         return (
           <a href={`/creative/photography/${project}`} class="project-card">
             <img
-              src={`${R2_BASE_URL}/photos/covers/${cover}`}
+              src={`${R2_BASE_URL}/photos/${cover}`}
               alt={`${title} photography cover`}
               loading={project === projects[0] ? "eager" : "lazy"}
               decoding="async"
@@ -54,9 +54,9 @@ const projects = Object.keys(photoProjectData).sort((a, b) => {
             <div class="project-card-overlay">
               <h2>{title}</h2>
 
-              {projectDates[project] && (
+              {getProjectDate(project) && (
                 <p class="photo-project-year">
-                  {formatProjectDate(projectDates[project])}
+                  {formatProjectDate(getProjectDate(project))}
                 </p>
               )}
 

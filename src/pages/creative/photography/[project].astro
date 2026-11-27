@@ -15,7 +15,8 @@ const photoProjectData = photoProjects as PhotoProjects;
 const project = Astro.params.project as string;
 
 import {
-  projectDates,
+  getProjectDate,
+  getProjectDescription,
   formatProjectDate,
   formatPhotoTitle,
 } from "../../../data/photoMetadata";
@@ -39,21 +40,22 @@ const R2_BASE_URL =
         {title.toUpperCase()}
       </h1>
 
-      {projectDates[project] && (
+      {getProjectDate(project) && (
         <p class="project-date-subtitle">
-          {formatProjectDate(projectDates[project])}
+          {formatProjectDate(getProjectDate(project))}
         </p>
       )}
+      {getProjectDescription(project) && <p class="project-date-subtitle">{getProjectDescription(project)}</p>}
     </section>
 
     <section class="photo-grid">
       {images.map((image, index) => (
         <button
           class="photo-card lightbox-trigger"
-          data-full={`${R2_BASE_URL}/photos/${project}/${image}`}
+          data-full={`${R2_BASE_URL}/photos/${encodeURIComponent(project)}/${encodeURIComponent(image)}`}
         >
           <img
-            src={`${R2_BASE_URL}/photos/${project}/${image}`}
+            src={`${R2_BASE_URL}/photos/${encodeURIComponent(project)}/${encodeURIComponent(image)}`}
             alt={`${title} photography`}
             loading={index < 4 ? "eager" : "lazy"}
             decoding="async"

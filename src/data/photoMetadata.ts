@@ -1,3 +1,7 @@
+import { albumMetadata } from "./photoProjects";
+
+const r2Metadata = albumMetadata as Record<string, { title?: string; date?: string; description?: string }>;
+
 export const titleOverrides: Record<string, string> = {
   boston_siff: "Boston SIFF",
   athens_greece: "Athens",
@@ -80,14 +84,22 @@ export function formatProjectDate(dateString: string) {
 }
 
 export function formatPhotoTitle(project: string) {
+  if (r2Metadata[project]?.title) return r2Metadata[project].title;
   if (titleOverrides[project]) return titleOverrides[project];
 
   return project
     .split("_")
     .map((word: string) =>
-      ["ii", "iii", "iv", "v"].includes(word)
+      ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"].includes(word)
         ? word.toUpperCase()
         : word.charAt(0).toUpperCase() + word.slice(1)
     )
     .join(" ");
+}
+export function getProjectDate(project: string) {
+  return r2Metadata[project]?.date || projectDates[project];
+}
+
+export function getProjectDescription(project: string) {
+  return r2Metadata[project]?.description;
 }

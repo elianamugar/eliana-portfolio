@@ -5,12 +5,16 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "17 * * * *"
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -24,6 +28,19 @@ jobs:
           node-version: 22
 
       - run: npm ci
+
+      - name: Install rclone
+        run: sudo apt-get update && sudo apt-get install -y rclone
+
+      - name: Discover photography albums
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+          RCLONE_CONFIG_R2_REGION: auto
+        run: node scripts/generate-photo-data-from-r2.mjs
 
       - run: node scripts/generate-media-feed.mjs
 
